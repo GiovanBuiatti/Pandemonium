@@ -32,9 +32,23 @@ class scene extends Phaser.Scene {
         this.player = new Player(this)
 
         this.cameras.main.startFollow(this.player.player,false);
+        this.physics.add.overlap(player, this.lianne,this.tuch.bind(this),null,this)
         this.initKeyboard()
+        this.wallJump()
+
 
     }
+
+    //tuch(player, mur){
+    //   this.player.mur=true
+    //    console.log(player.mur)
+    // }
+
+
+
+
+
+
     initKeyboard() {
         let me = this;
         this.input.keyboard.on('keydown', function (kevent) {
@@ -79,7 +93,28 @@ class scene extends Phaser.Scene {
             }
         });
     }
+    wallJump() {
+        let me = this;
+        if (this.player.player.onmur) {
+            this.player.mur = false
+            if (this.upDown) {
+                me.player.player.setVelocityY(-100);
+                me.player.player.body.setAllowGravity(true);
+            } else if (this.downDown) {
+                me.player.player.setVelocityY(100);
+                me.player.player.body.setAllowGravity(true);
+            } else {
+                me.player.setVelocityY(0);
+                me.player.player.body.setAllowGravity(false);
 
+            }
+        }
+        if (!this.player.onlianne) {
+            if (this.downDown || this.upDown || this.rightDown || this.leftDown) {
+                me.player.player.body.setAllowGravity(true);
+            }
+        }
+    }
 
     update() {
         console.log(this.player.player.body.onWall())

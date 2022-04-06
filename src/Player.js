@@ -34,10 +34,7 @@ class Player {
 
         });
     }
-    onmur(){
-        this.player.body.blocked.down=true
-        console.log('sur le mur')
-    }
+
 
     //LE DASH
     create(){
