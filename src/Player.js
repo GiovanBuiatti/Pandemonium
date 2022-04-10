@@ -2,119 +2,158 @@ class Player {
 
 
     constructor(scene) {
-        this.scene=scene
-        this.cameras=scene
+        this.scene = scene;
+        this.cameras = scene;
         this.player = this.scene.physics.add.sprite(50, 300, 'player');
-        this.player.setBounce(0);
         this.player.setCollideWorldBounds(false);
         this.scene.physics.add.collider(this.player, this.scene.platforms);
-        this.scene.physics.add.overlap(this.player, this.scene.mur,this.onmur,null,this);
+        this.onWall = false;
 
-        this.scene.anims.create({
-            key: 'walk',
-            frames: this.scene.anims.generateFrameNames('player', {
-                prefix: 'robo_player_',
-                start: 2,
-                end: 3,
-            }),
-            frameRate: 10,
-            repeat: -1
+
+    }
+
+
+    //ICI ON MET NOS RACCOURCIS !
+
+    initKeyboard() {
+        let me = this;
+
+        this.scene.input.keyboard.on('keydown', function (kevent) {
+            switch (kevent.keyCode) {
+                case Phaser.Input.Keyboard.KeyCodes.SPACE:
+                    me.spaceDown=true;
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.SHIFT:
+                    me.shiftDown=true;
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.D:
+                    me.dDown=true;
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.Q:
+                    me.qDown=true;
+                    break;
+            }
         });
-        this.scene.anims.create({
-            key: 'idle',
-            frames: [{key: 'player', frame: 'robo_player_0'}],
-            frameRate: 10,
-
-        });
-        this.scene.anims.create({
-            key: 'jump',
-            frames: [{key: 'player', frame: 'robo_player_1'}],
-            frameRate: 10,
-            repeat:-1,
-
+        this.scene.input.keyboard.on('keyup', function (kevent) {
+            switch (kevent.keyCode) {
+                case Phaser.Input.Keyboard.KeyCodes.SPACE:
+                    me.spaceDown=false;
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.SHIFT:
+                    me.shiftDown=false;
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.D:
+                    me.dDown=false;
+                    break;
+                case Phaser.Input.Keyboard.KeyCodes.Q:
+                    me.qDown=false;
+                    break;
+            }
         });
     }
 
 
-    //LE DASH
-    create(){
-        this.speed={
-            speedDash:1,
+
+    //TOUTES LES FONCTIONS JUSQU'A **MOVE** CONCERNENT LES DEPLACEMENTS !
+
+    //SAUT
+    jump() {
+        if (this.player.body.onFloor()){
+            this.player.setVelocityY(-450);
+            console.log('jump');
         }
-
-        this.dash = this.tweens.add({
-            targets: this.speed,
-            speedDash: 1,
-            // alpha: { start: 0, to: 1 },
-            // alpha: 1,
-            // alpha: '+=1',
-            ease: "Circ.easeInOut", // 'Cubic', 'Elastic', 'Bounce', 'Back'
-            duration: 300,
-            //repeat: -1, // -1: infinity
-            //yoyo: true
-        });
-
-//CREATION DES ACTIONS DU PERSONNAGE
-        this.player = this.physics.add.sprite(100, 450, 'dude');
-
-        //this.player.setBounce(0.2);// REBONDISSEMENT DU PERSONNAGE LORSQU'IL SAUTE
-        this.player.setCollideWorldBounds(true);//COLLISION AVEC TOUS LES OBJETS DU JEU
-//CREATION DES ANIMATIONS DU PERSONNAGE GRACE AU SPRITESHEET
-        this.anims.create({
-            key: 'left',
-            frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),//CE SONT LES IMAGES 0/1/2/3 QUI SONT JOUEES
-            frameRate: 10,//NOMBRE D'IMAGES JOUEES
-            repeat: -1//REPETITION INFINIE
-        });
-
-        this.anims.create({
-            key: 'turn',
-            frames: [ { key: 'dude', frame: 4 } ],//C'EST L'IMAGE 4 QUI EST JOUEE
-            frameRate: 20//NOMBRE D'IMAGES JOUEES
-        });
-
-        this.anims.create({
-            key: 'right',
-            frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),//CE SONT LES IMAGES 5/6/7/8 QUI SONT JOUEES
-            frameRate: 10,//NOMBRE D'IMAGES JOUEES
-            repeat: -1//REPETITION INFINIE
-        });
-
-        this.anims.create({
-            key: 'tombe',
-            frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),//CE SONT LES IMAGES 5/6/7/8 QUI SONT JOUEES
-            frameRate: 10,//NOMBRE D'IMAGES JOUEES
-            repeat: 1//REPETITION INFINIE
-        });
-
-
     }
 
-
-    jump(){
-        this.player.setVelocityY(-420);
-        this.player.play('jump', true);
-    }
-    moveRight(){
+    //DEPLACEMENT VERS LA DROITE
+    moveRight() {
         this.player.setVelocityX(300);
         this.player.setFlipX(false);
         if (this.player.body.onFloor()) {
-            this.player.play('walk', true)}
-    }
-    moveLeft(){
-        this.player.setVelocityX(-300);
-        if (this.player.body.onFloor()) {
-            this.player.play('walk', true)}
-        this.player.setFlipX(true);
-    }
-    stop(){
-        this.player.setVelocityX(0);
-        if (this.player.body.onFloor()) {
-            this.player.play('idle',true)
+
+            // this.player.play('walk', true)
         }
     }
 
+    moveRightRelease() {
+        // ralenti droite
+        switch (true) {
+            case this.flagright:
+                // fais rien
+                break;
+            case !this.dDown && !this.player.body.onFloor():
+                this.player.setVelocityX(this.player.body.velocity.x * 0.6);
+                this.flagright = true;
+                break;
+            default:
+                break;
+        }
     }
+
+
+    //DEPLACEMENT VERS LA GAUCHE
+    moveLeft() {
+        this.player.setVelocityX(-300);
+        if (this.player.body.onFloor()) {
+            // this.player.play('walk', true)
+        }
+        this.player.setFlipX(true);
+    }
+
+    moveLeftRelease() {
+        // ralenti gauche
+        switch (true) {
+            case this.flagleft:
+                // fais rien
+                break;
+            case !this.qDown && !this.player.body.onFloor():
+                this.player.setVelocityX(this.player.body.velocity.x * 0.6);
+                this.flagleft = true;
+                break;
+            default:
+                break;
+        }
+    }
+
+    //CETTE FONCTION SERT A ARRETER LE JOUEUR QUAND ON VA VERS LA DROITE/GAUCHE. SINON ON COURS SANS S'ARRETER QUAND ON KEYUP.
+    stop() {
+        this.player.setVelocityX(0);
+        if (this.player.body.onFloor()) {
+            //this.player.play('idle',true)
+        } else {
+            this.player.setVelocityX(this.player.body.velocity.x * 0.6);
+            this.player.setVelocityY(this.player.body.velocity.y * 0.6);
+        }
+    }
+
+
+    //CETTE FONCTION INITIALISE TOUS LES DEPLACEMENTS
+    move() {
+
+            if (this.spaceDown) {
+                this.jump();
+                this.flag = false;
+            }
+
+            switch (true) {
+                case this.qDown:
+                    this.moveLeft()
+                    this.flagleft = false;
+                    break;
+                case this.dDown:
+                    this.moveRight();
+                    this.flagright = false;
+                    break;
+                case this.player.body.onFloor():
+                    this.stop();
+                    break;
+            }
+        this.moveRightRelease();
+        this.moveLeftRelease();
+        }
+
+
+
+}
 
 
 

@@ -16,112 +16,47 @@ class scene extends Phaser.Scene {
 
 
 
+
+
         const backgroundImage = this.add.image(0, 0, 'background').setOrigin(0, 0);
         backgroundImage.setScale(1, 0.8);
         const map = this.make.tilemap({key: 'map'});
 
         const tileset = map.addTilesetImage('Alpha_test1', 'tiles');
+
         this.platforms = map.createStaticLayer('Sol', tileset);
-        this.mur = map.createStaticLayer('mur', tileset);
+
 
         this.platforms.setCollisionByExclusion(-1, true);
-        this.mur.setCollisionByExclusion(-1, true);
-        this.cursors = this.input.keyboard.createCursorKeys();
+
+
+
 
 
         this.player = new Player(this)
 
-        this.cameras.main.startFollow(this.player.player,false);
-        this.physics.add.overlap(player, this.lianne,this.tuch.bind(this),null,this)
-        this.initKeyboard()
-        this.wallJump()
+
+
+        //CAMERA
+        this.cameras.main.startFollow(this.player.player, true, 0.03, 0.03);
+
+
+
+        //FONCTIONS
+        this.player.initKeyboard()
+
+
+
 
 
     }
 
-    //tuch(player, mur){
-    //   this.player.mur=true
-    //    console.log(player.mur)
-    // }
 
 
-
-
-
-
-    initKeyboard() {
-        let me = this;
-        this.input.keyboard.on('keydown', function (kevent) {
-            switch (kevent.keyCode) {
-                case Phaser.Input.Keyboard.KeyCodes.SHIFT:
-                    me.shiftDown=true;
-                    me.dash=true;
-                    break;
-                case Phaser.Input.Keyboard.KeyCodes.SPACE:
-                    me.spaceDown=true;
-
-                    if (me.player.player.body.onFloor())
-                    {
-                        me.player.jump();//LE JOUR VA A UNE VITESSE DE 330 VERS LE HAUT
-                    }
-                    break;
-                case Phaser.Input.Keyboard.KeyCodes.D:
-                    me.rightDown=true;
-                    me.player.moveRight();//LE PERSONNAGE VA A UNE VITESSE DE A UNE VITESSE DE 160 A DROITE
-                    //ET ON LUI DEMANDE DE LANCER L'ANIMATION RIGHT QU'ON A CREE DANS LA FONCTION CREATE
-                    break;
-                case Phaser.Input.Keyboard.KeyCodes.Q:
-                    me.leftDown=true;
-                    me.player.moveLeft();//LE PERSONNAGE VA A UNE VITESSE DE A UNE VITESSE DE 160 A GAUCHE
-                    //ET ON LUI DEMANDE DE LANCER L'ANIMATION LEFT QU'ON A CREE DANS LA FONCTION CREATE
-                    break;
-            }
-        });
-        this.input.keyboard.on('keyup', function (kevent) {
-            switch (kevent.keyCode) {
-                case Phaser.Input.Keyboard.KeyCodes.SHIFT:
-                    break;
-                case Phaser.Input.Keyboard.KeyCodes.SPACE:
-                    break;
-                case Phaser.Input.Keyboard.KeyCodes.D:
-                    me.player.stop()
-                    break;
-                case Phaser.Input.Keyboard.KeyCodes.Q:
-                    me.player.stop()
-                    break;
-
-            }
-        });
-    }
-    wallJump() {
-        let me = this;
-        if (this.player.player.onmur) {
-            this.player.mur = false
-            if (this.upDown) {
-                me.player.player.setVelocityY(-100);
-                me.player.player.body.setAllowGravity(true);
-            } else if (this.downDown) {
-                me.player.player.setVelocityY(100);
-                me.player.player.body.setAllowGravity(true);
-            } else {
-                me.player.setVelocityY(0);
-                me.player.player.body.setAllowGravity(false);
-
-            }
-        }
-        if (!this.player.onlianne) {
-            if (this.downDown || this.upDown || this.rightDown || this.leftDown) {
-                me.player.player.body.setAllowGravity(true);
-            }
-        }
-    }
 
     update() {
-        console.log(this.player.player.body.onWall())
 
-
-
-
+        this.player.move();
 
 
 
