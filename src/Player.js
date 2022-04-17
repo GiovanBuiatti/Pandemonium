@@ -14,6 +14,18 @@ class Player {
 
 
     //ICI ON MET NOS RACCOURCIS !
+  dash(){
+      this.tween = this.scene.tweens.add({
+
+          targets: this.player,
+          ease: 'Circ.easeInOut',
+          duration: 250,
+          x: 200,
+
+
+      });
+      console.log('dash');
+  }
 
     initKeyboard() {
         let me = this;
@@ -132,6 +144,10 @@ class Player {
             if (this.spaceDown) {
                 this.jump();
                 this.flag = false;
+            }
+            if (this.shiftDown){
+                this.dash();
+
             }
 
             switch (true) {
