@@ -70,6 +70,14 @@ class Player {
 
     //SAUT
     jump() {
+        if (this.player.body.onWall()){
+            this.player.setVelocityY(-450);
+            this.player.setVelocityX(450);
+
+
+            console.log('onWall');
+        }
+
         if (this.player.body.onFloor()){
             this.player.setVelocityY(-450);
             console.log('jump');
