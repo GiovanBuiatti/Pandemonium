@@ -9,23 +9,52 @@ class Player {
         this.scene.physics.add.collider(this.player, this.scene.platforms);
         this.onWall = false;
 
-
+        this.d = 1;
+        this.lockDash=0;
     }
 
 
     //ICI ON MET NOS RACCOURCIS !
-  dash(){
-      this.tween = this.scene.tweens.add({
-
-          targets: this.player,
-          ease: 'Circ.easeInOut',
-          duration: 250,
-          x: 200,
-
-
-      });
+  dashR(){
+      if(this.dDown && this.shiftDown) {
+          if (this.lockDash == 0) {
+              this.lockDash = 1
+              let me = this;
+              this.tween = this.scene.tweens.add({
+                  targets: this,
+                  d: '+=10',
+                  ease: 'Circ.easeInOut',
+                  duration: 250,
+                  onComplete: function () {
+                      me.d = 1
+                      me.shiftDown = false;
+                      me.lockDash = 0
+                  }
+              });
+          }
+      }
       console.log('dash');
   }
+    dashL() {
+        if (this.qDown && this.shiftDown) {
+            if (this.lockDash == 0) {
+                this.lockDash = 1
+                let me = this;
+                this.tween = this.scene.tweens.add({
+                    targets: this,
+                    d: '+=10',
+                    ease: 'Circ.easeInOut',
+                    duration: 250,
+                    onComplete: function () {
+                        me.d = 1
+                        me.shiftDown = false;
+                        me.lockDash = 0
+                    }
+                });
+            }
+            console.log('dash');
+        }
+    }
 
     initKeyboard() {
         let me = this;
@@ -86,7 +115,7 @@ class Player {
 
     //DEPLACEMENT VERS LA DROITE
     moveRight() {
-        this.player.setVelocityX(300);
+        this.player.setVelocityX(300*this.d);
         this.player.setFlipX(false);
         if (this.player.body.onFloor()) {
 
@@ -112,7 +141,7 @@ class Player {
 
     //DEPLACEMENT VERS LA GAUCHE
     moveLeft() {
-        this.player.setVelocityX(-300);
+        this.player.setVelocityX(-300*this.d);
         if (this.player.body.onFloor()) {
             // this.player.play('walk', true)
         }
@@ -153,10 +182,12 @@ class Player {
                 this.jump();
                 this.flag = false;
             }
-            if (this.shiftDown){
-                this.dash();
-
+            if (this.qDown && this.shiftDown){
+                this.dashL();
             }
+            if (this.dDown && this.shiftDown){
+                this.dashR();
+             }
 
             switch (true) {
                 case this.qDown:
