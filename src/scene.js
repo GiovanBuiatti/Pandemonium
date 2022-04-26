@@ -6,6 +6,7 @@ class scene extends Phaser.Scene {
         // At last image must be loaded with its JSON
         this.load.atlas('player', 'assets/images/kenney_player.png', 'assets/images/kenney_player_atlas.json');
         this.load.image('tiles', 'assets/tilesets/platformPack_tilesheet.png');
+        this.load.image('thirdP', 'assets/tilesets/3eme plan.png');
 
         // Load the export Tiled JSON
         this.load.tilemapTiledJSON('map', 'assets/tilemaps/Alpha1.json');
@@ -23,6 +24,7 @@ class scene extends Phaser.Scene {
         const map = this.make.tilemap({key: 'map'});
 
         const tileset = map.addTilesetImage('Alpha_test1', 'tiles');
+        const tileset1 = map.addTilesetImage('thirdP', 'thirdP');
 
         this.platforms = map.createStaticLayer('Sol', tileset);
 
