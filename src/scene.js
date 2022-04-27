@@ -64,7 +64,8 @@ class scene extends Phaser.Scene {
         this.player.initKeyboard()
 
 
-
+        this.scene.pause()
+        console.log('prout')
 
 
 
