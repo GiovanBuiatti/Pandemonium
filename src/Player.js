@@ -11,6 +11,13 @@ class Player {
 
         this.d = 1;
         this.lockDash=0;
+        this.spaceDown=false;
+        this.shiftDown=false;
+        this.qDown=false;
+        this.dDown=false;
+        this.scene.physics.add.collider(this.player, this.scene.collide, this.jumpWall(this.player, this.scene.collide), null, this);
+        this.lock=false;
+
     }
 
 
@@ -62,7 +69,8 @@ class Player {
         this.scene.input.keyboard.on('keydown', function (kevent) {
             switch (kevent.keyCode) {
                 case Phaser.Input.Keyboard.KeyCodes.SPACE:
-                    me.spaceDown=true;
+                    me.spaceDown = true;
+
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.SHIFT:
                     me.shiftDown=true;
@@ -79,6 +87,7 @@ class Player {
             switch (kevent.keyCode) {
                 case Phaser.Input.Keyboard.KeyCodes.SPACE:
                     me.spaceDown=false;
+                    me.lock=false;
                     break;
                 case Phaser.Input.Keyboard.KeyCodes.SHIFT:
                     me.shiftDown=false;
@@ -98,19 +107,20 @@ class Player {
     //TOUTES LES FONCTIONS JUSQU'A **MOVE** CONCERNENT LES DEPLACEMENTS !
 
     //SAUT
+    jumpWall(player, collider){
+        let me = this;
+        if(player.body.onWall() && me.spaceDown && !me.lock){
+
+            this.player.setVelocityY(450);
+
+            me.lock=true;
+        }
+        console.log('bite', player.body.onWall());
+
+    }
     jump() {
-        if (this.player.body.onWall()){
-            this.player.setVelocityY(-450);
-            this.player.setVelocityX(450);
-
-
-            console.log('onWall');
-        }
-
-        if (this.player.body.onFloor()){
-            this.player.setVelocityY(-450);
-            console.log('jump');
-        }
+        this.player.setVelocityY(-450);
+        console.log('jump');
     }
 
     //DEPLACEMENT VERS LA DROITE
@@ -178,10 +188,12 @@ class Player {
     //CETTE FONCTION INITIALISE TOUS LES DEPLACEMENTS
     move() {
 
-            if (this.spaceDown) {
+            if (this.spaceDown && this.player.body.onFloor()) {
                 this.jump();
+
                 this.flag = false;
             }
+
             if (this.qDown && this.shiftDown){
                 this.dashL();
             }
