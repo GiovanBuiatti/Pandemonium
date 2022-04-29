@@ -5,6 +5,8 @@ class scene extends Phaser.Scene {
         this.load.image('spike', 'assets/images/spike.png');
         // At last image must be loaded with its JSON
         this.load.atlas('player', 'assets/images/kenney_player.png', 'assets/images/kenney_player_atlas.json');
+        this.load.atlas('attack', 'assets/animation/attack.png', 'assets/animation/attack.json');
+        this.load.atlas('run', 'assets/animation/run.png', 'assets/animation/run.json');
         this.load.image('tiles', 'assets/tilesets/platformPack_tilesheet.png');
 
 
@@ -64,7 +66,7 @@ class scene extends Phaser.Scene {
         this.player.initKeyboard()
 
 
-        this.scene.pause()
+
         console.log('prout')
 
 
@@ -77,7 +79,7 @@ class scene extends Phaser.Scene {
     update() {
 
         this.player.move();
-
+        this.player.update()
         console.log(this.player.player.body.onWall())
 
 
