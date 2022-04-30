@@ -37,8 +37,8 @@ class Player {
 
         this.scene.anims.create({
             key: 'idle',
-            frameRate: 4,
-            frames: this.scene.anims.generateFrameNames('attack', {start: 1, end: 2, prefix: 'attack_',suffix:'.png',zeroPad:1}),
+            frameRate: 8,
+            frames: this.scene.anims.generateFrameNames('idle', {start: 1, end: 8, prefix: 'idle_',suffix:'.png',zeroPad:1}),
             repeat: -1,
 
         })
@@ -231,8 +231,9 @@ class Player {
     //CETTE FONCTION SERT A ARRETER LE JOUEUR QUAND ON VA VERS LA DROITE/GAUCHE. SINON ON COURS SANS S'ARRETER QUAND ON KEYUP.
     stop() {
         this.player.setVelocityX(0);
+
         if (this.player.body.onFloor()) {
-            //this.player.play('idle',true)
+            this.player.play('idle',true)
         } else {
             this.player.setVelocityX(this.player.body.velocity.x * 0.6);
             this.player.setVelocityY(this.player.body.velocity.y * 0.6);
@@ -253,7 +254,6 @@ class Player {
                 this.dashL();
             }
             if (this.dDown && this.shiftDown){
-
                 this.dashR();
              }
             if (this.leftMouseDown){
@@ -277,6 +277,7 @@ class Player {
                     break;
                 case this.player.body.onFloor():
                     this.stop();
+
                     break;
             }
         this.moveRightRelease();

@@ -7,6 +7,7 @@ class scene extends Phaser.Scene {
         this.load.atlas('player', 'assets/images/kenney_player.png', 'assets/images/kenney_player_atlas.json');
         this.load.atlas('attack', 'assets/animation/attack.png', 'assets/animation/attack.json');
         this.load.atlas('run', 'assets/animation/run.png', 'assets/animation/run.json');
+        this.load.atlas('idle', 'assets/animation/idle.png', 'assets/animation/idle.json');
         this.load.image('tiles', 'assets/tilesets/platformPack_tilesheet.png');
 
 
