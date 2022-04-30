@@ -53,11 +53,11 @@ class Player {
 
     attaque(){
 
-        this.attac = this.scene.add.rectangle(this.player.x+this.player.width-40, this.player.y, 100, 40).setOrigin(0, 0)
+        this.attac = this.scene.add.rectangle(this.player.x+this.player.width-40, this.player.y+this.player.height, 60, 40).setOrigin(0, 0)
 
         this.attac = this.scene.physics.add.existing(this.attac)
         this.attac.body.setAllowGravity(false);
-        this.attac.body.setVelocityY(700);
+        this.attac.body.setVelocityY(-700);
 
 
         console.log(this.attac.x, this.attac.y, this.player.x, this.player.y)
