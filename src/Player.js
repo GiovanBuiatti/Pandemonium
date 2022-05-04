@@ -20,7 +20,9 @@ class Player {
         this.lock=false;
         this.animation();
         this.attaque();
+        this.attaqueD();
         this.initKeyboardQWERTY()
+        this.direction='droite'
 
     }
 
@@ -43,6 +45,13 @@ class Player {
 
         })
         this.scene.anims.create({
+            key: 'attackD',
+            frameRate: 14,
+            frames: this.scene.anims.generateFrameNames('attackD', {start: 1, end: 8, prefix: 'attackD_',suffix:'.png',zeroPad:1}),
+
+
+        })
+        this.scene.anims.create({
             key: 'run',
             frameRate: 13,
             frames: this.scene.anims.generateFrameNames('run', {start: 1, end: 13, prefix: 'run_',suffix:'.png',zeroPad:1}),
@@ -51,16 +60,44 @@ class Player {
         })
     }
 
-    attaque(){
+    attaque(direction){
 
-        this.attac = this.scene.add.rectangle(this.player.x+this.player.width-40, this.player.y+this.player.height, 60, 40).setOrigin(0, 0)
+        if(direction==='droite'){
+            this.attac = this.scene.add.rectangle(this.player.x+this.player.width-40, this.player.y+this.player.height, 60, 40).setOrigin(0, 0)
+        }
+        else{
+            this.attac = this.scene.add.rectangle(this.player.x-this.player.width+110, this.player.y+this.player.height, 60, 40).setOrigin(0, 0)
+        }
 
         this.attac = this.scene.physics.add.existing(this.attac)
         this.attac.body.setAllowGravity(false);
         this.attac.body.setVelocityY(-700);
 
 
+
         console.log(this.attac.x, this.attac.y, this.player.x, this.player.y)
+        this.scene.time.delayedCall(1000, () => {
+            this.attac.destroy()
+
+        });
+    }
+    attaqueD(){
+
+
+        this.attacD = this.scene.add.rectangle(this.player.x, this.player.y+this.player.height, 60, 40).setOrigin(0, 0)
+
+
+
+        this.attacD = this.scene.physics.add.existing(this.attacD)
+        this.attacD.body.setAllowGravity(false);
+        this.attacD.body.setVelocityY(-700);
+
+
+
+        this.scene.time.delayedCall(1000, () => {
+            this.attacD.destroy()
+
+        });
     }
 
     //ICI ON MET NOS RACCOURCIS !
@@ -258,7 +295,7 @@ class Player {
              }
             if (this.leftMouseDown){
                 this.player.play('attack', true)
-                this.attaque();
+                this.attaque(this.direction);
                 this.leftMouseDown=false;
                 console.log('ouoi')
             }
@@ -268,11 +305,13 @@ class Player {
                     this.player.play('run', true)
 
                     this.moveLeft()
+                    this.direction='gauche'
                     this.flagleft = false;
                     break;
                 case this.dDown:
                     this.player.play('run', true)
                     this.moveRight();
+                    this.direction='droite'
                     this.flagright = false;
                     break;
                 case this.player.body.onFloor():
