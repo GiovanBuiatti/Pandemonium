@@ -9,6 +9,7 @@ class scene extends Phaser.Scene {
         this.load.atlas('run', 'assets/animation/run.png', 'assets/animation/run.json');
         this.load.atlas('idle', 'assets/animation/idle.png', 'assets/animation/idle.json');
         this.load.atlas('attackD', 'assets/animation/attackD.png', 'assets/animation/attackD.json');
+        this.load.atlas('wallslide', 'assets/animation/wallslide.png', 'assets/animation/wallslide.json');
         this.load.image('tiles', 'assets/tilesets/platformPack_tilesheet.png');
 
 
@@ -19,6 +20,7 @@ class scene extends Phaser.Scene {
 
     create() {
 
+        this.input.mouse.disableContextMenu();
 
 
 

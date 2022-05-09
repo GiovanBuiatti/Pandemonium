@@ -4,7 +4,7 @@ class Player {
     constructor(scene) {
         this.scene = scene;
         this.cameras = scene;
-        this.player = this.scene.physics.add.sprite(50, 600, 'attack').setOrigin(0, 0);
+        this.player = this.scene.physics.add.sprite(-1100, 450, 'attack').setOrigin(0, 0);
         this.player.body.setSize(50, 112)
         this.player.setCollideWorldBounds(false);
         this.scene.physics.add.collider(this.player, this.scene.platforms);
@@ -52,7 +52,7 @@ class Player {
         this.scene.anims.create({
             key: 'attackD',
             frameRate: 14,
-            frames: this.scene.anims.generateFrameNames('attackD', {start: 1, end: 8, prefix: 'attackD_',suffix:'.png',zeroPad:1}),
+            frames: this.scene.anims.generateFrameNames('attackD', {start: 1, end: 9, prefix: 'attackD_',suffix:'.png',zeroPad:1}),
 
 
         })
@@ -61,6 +61,13 @@ class Player {
             frameRate: 13,
             frames: this.scene.anims.generateFrameNames('run', {start: 1, end: 13, prefix: 'run_',suffix:'.png',zeroPad:1}),
 
+
+        })
+        this.scene.anims.create({
+            key: 'wallslide',
+            frameRate: 12,
+            frames: this.scene.anims.generateFrameNames('wallslide', {start: 1, end: 3, prefix: 'wallslide_',suffix:'.png',zeroPad:1}),
+            repeat: -1,
 
         })
     }
@@ -89,13 +96,13 @@ class Player {
     attaqueD(){
 
 
-        this.attacD = this.scene.add.rectangle(this.player.x, this.player.y+this.player.height, 60, 40).setOrigin(0, 0)
+        this.attacD = this.scene.add.rectangle(this.player.x+40, this.player.y, 50, 40).setOrigin(0, 0)
 
 
 
         this.attacD = this.scene.physics.add.existing(this.attacD)
         this.attacD.body.setAllowGravity(false);
-        this.attacD.body.setVelocityY(-700);
+        this.attacD.body.setVelocityY(500);
 
 
 
@@ -189,9 +196,12 @@ class Player {
         let me = this;
         this.scene.input.on('pointerup', function (pointer) {
             if (pointer.leftButtonReleased()) {
-
                 me.leftMouseDown = true;
-
+            }
+        });
+        this.scene.input.on('pointerup', function (pointer) {
+            if (pointer.rightButtonReleased()) {
+                me.rightMouseDown = true;
             }
         });
     }
@@ -205,7 +215,10 @@ class Player {
 
         if(collider.name==="stick")
         {
+
             this.jumpWallon=true
+            this.player.setFlipX(true)
+            this.player.play('wallslide', true)
 
 
             if(this.jumpWallon===true && this.player.body.velocity.y!=0 && this.spaceDown){
@@ -233,7 +246,7 @@ class Player {
 
 
             this.canJump = false
-            this.player.setVelocityY(-450);
+            this.player.setVelocityY(-500);
 
 
 
@@ -332,6 +345,12 @@ class Player {
                 this.leftMouseDown=false;
 
             }
+        if (this.rightMouseDown){
+            this.player.play('attackD', true)
+            this.attaqueD();
+            this.rightMouseDown=false;
+
+        }
 
             switch (true) {
                 case this.qDown:
@@ -349,7 +368,9 @@ class Player {
                     break;
                 case this.player.body.onFloor():
                     this.stop();
-
+                    break;
+                case this.player.body.onFloor(false):
+                    this.player.play('walk', false)
                     break;
             }
         this.moveRightRelease();
