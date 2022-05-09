@@ -57,6 +57,13 @@ class Player {
 
         })
         this.scene.anims.create({
+            key: 'falling',
+            frameRate: 12,
+            frames: this.scene.anims.generateFrameNames('falling', {start: 1, end: 3, prefix: 'falling_',suffix:'.png',zeroPad:1}),
+
+
+        })
+        this.scene.anims.create({
             key: 'run',
             frameRate: 13,
             frames: this.scene.anims.generateFrameNames('run', {start: 1, end: 13, prefix: 'run_',suffix:'.png',zeroPad:1}),
@@ -340,17 +347,20 @@ class Player {
                 this.dashR();
              }
             if (this.leftMouseDown){
-                this.player.play('attack', true)
+                this.player.play('attack')
                 this.attaque(this.direction);
                 this.leftMouseDown=false;
 
             }
-        if (this.rightMouseDown){
-            this.player.play('attackD', true)
-            this.attaqueD();
-            this.rightMouseDown=false;
+            if (this.rightMouseDown){
+                this.player.play('attackD')
+                this.attaqueD();
+                this.rightMouseDown=false;
 
-        }
+            }
+            if(this.player.body.velocity.y > 0){
+                this.player.play('falling', true)
+            }
 
             switch (true) {
                 case this.qDown:
