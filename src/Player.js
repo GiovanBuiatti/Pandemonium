@@ -16,13 +16,18 @@ class Player {
         this.shiftDown=false;
         this.qDown=false;
         this.dDown=false;
-        this.scene.physics.add.collider(this.player, this.scene.collide, this.jumpWall(this.player, this.scene.collide), null, this);
+        this.scene.physics.add.collider(this.player, this.scene.collide, this.jumpWall, null, this);
         this.lock=false;
         this.animation();
         this.attaque();
         this.attaqueD();
         this.initKeyboardQWERTY()
         this.direction='droite'
+        this.directionjump=1
+        this.canJump=true
+        this.compteur=0
+        this.jumpWallon=false
+
 
     }
 
@@ -75,7 +80,7 @@ class Player {
 
 
 
-        console.log(this.attac.x, this.attac.y, this.player.x, this.player.y)
+
         this.scene.time.delayedCall(1000, () => {
             this.attac.destroy()
 
@@ -119,7 +124,7 @@ class Player {
               });
           }
       }
-      console.log('dash');
+
   }
     dashL() {
         if (this.qDown && this.shiftDown) {
@@ -138,7 +143,7 @@ class Player {
                     }
                 });
             }
-            console.log('dash');
+
         }
     }
 
@@ -197,24 +202,46 @@ class Player {
 
     //SAUT
     jumpWall(player, collider){
-        let me = this;
-        if(player.body.onWall() && me.spaceDown && !me.lock){
 
-            this.player.setVelocityY(450);
+        if(collider.name==="stick")
+        {
+            this.jumpWallon=true
 
-            me.lock=true;
+
+            if(this.jumpWallon===true && this.player.body.velocity.y!=0 && this.spaceDown){
+                this.scene.tweens.addCounter(
+                    {
+                        from: 0,
+                        to: 100,
+                        duration: 100,
+                        ease: 'linear',
+                        onUpdate: tween => {this.player.setVelocityX(-700*this.directionjump)},
+                        onComplete: tween => {this.jumpWallon=false
+                            this.canJump=true
+                            this.player.setVelocityX(0)
+                        }
+
+                    })
+            }
         }
-        console.log('oeee', player.body.onWall());
 
-    }
+
+        }
+
+
     jump() {
-        this.player.setVelocityY(-450);
-        console.log('jump');
+
+
+            this.canJump = false
+            this.player.setVelocityY(-450);
+
+
+
     }
 
     //DEPLACEMENT VERS LA DROITE
     moveRight() {
-
+        this.directionjump=1
         this.player.setVelocityX(300*this.d);
         this.player.setFlipX(false);
 
@@ -242,6 +269,7 @@ class Player {
 
     //DEPLACEMENT VERS LA GAUCHE
     moveLeft() {
+        this.directionjump=-1
         this.player.setVelocityX(-300*this.d);
         this.player.setFlipX(true)
         if (this.player.body.onFloor()) {
@@ -267,7 +295,10 @@ class Player {
 
     //CETTE FONCTION SERT A ARRETER LE JOUEUR QUAND ON VA VERS LA DROITE/GAUCHE. SINON ON COURS SANS S'ARRETER QUAND ON KEYUP.
     stop() {
-        this.player.setVelocityX(0);
+
+            this.player.setVelocityX(0);
+
+
 
         if (this.player.body.onFloor()) {
             this.player.play('idle',true)
@@ -280,8 +311,10 @@ class Player {
 
     //CETTE FONCTION INITIALISE TOUS LES DEPLACEMENTS
     move() {
-
-            if (this.spaceDown && this.player.body.onFloor()) {
+            if(this.player.body.onFloor()){
+                this.canJump=true
+            }
+            if (this.spaceDown && this.canJump) {
                 this.jump();
 
                 this.flag = false;
@@ -297,7 +330,7 @@ class Player {
                 this.player.play('attack', true)
                 this.attaque(this.direction);
                 this.leftMouseDown=false;
-                console.log('ouoi')
+
             }
 
             switch (true) {

@@ -41,6 +41,9 @@ class scene extends Phaser.Scene {
         });
         map.getObjectLayer('Collide').objects.forEach((col) => {
             const collider = this.add.rectangle(col.x, col.y, col.width, col.height).setOrigin(0,0)
+            if(col.name==="stick"){
+                collider.name=col.name
+            }
             this.collide.add(collider)
 
         });
