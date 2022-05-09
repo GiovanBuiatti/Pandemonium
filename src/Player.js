@@ -204,7 +204,7 @@ class Player {
     jumpWall(player, collider){
 
         if(collider.name==="stick")
-        { 
+        {
             this.jumpWallon=true
 
 
