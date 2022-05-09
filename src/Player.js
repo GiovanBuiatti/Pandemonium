@@ -203,8 +203,8 @@ class Player {
     //SAUT
     jumpWall(player, collider){
 
-        if(collider.name==="stick") 
-        {
+        if(collider.name==="stick")
+        { 
             this.jumpWallon=true
 
 
