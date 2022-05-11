@@ -6,6 +6,7 @@ class Player {
         this.cameras = scene;
         this.player = this.scene.physics.add.sprite(-1100, 450, 'attack').setOrigin(0, 0);
         this.player.body.setSize(50, 112)
+        this.player.body.setOffset(35, 15)
         this.player.setCollideWorldBounds(false);
         this.scene.physics.add.collider(this.player, this.scene.platforms);
         this.onWall = false;
@@ -34,32 +35,38 @@ class Player {
     animation(){
 
         this.scene.anims.create({
-            key: 'attack',
-            frameRate: 14,
-            frames: this.scene.anims.generateFrameNames('attack', {start: 1, end: 8, prefix: 'attack_',suffix:'.png',zeroPad:1}),
+           key: 'attack',
+           frameRate: 14,
+           frames: this.scene.anims.generateFrameNames('attack', {start: 1, end: 8, prefix: 'Attack/attack_',suffix:'.png',zeroPad:1}),
 
 
         })
 
+
+        this.scene.anims.create({
+            key: 'jump',
+            frameRate: 8,
+            frames: this.scene.anims.generateFrameNames('jump', {start: 1, end: 8, prefix: 'jump/jump_',suffix:'.png',zeroPad:1}),
+            repeat: -1,
+        })
 
         this.scene.anims.create({
             key: 'idle',
             frameRate: 8,
-            frames: this.scene.anims.generateFrameNames('idle', {start: 1, end: 8, prefix: 'idle_',suffix:'.png',zeroPad:1}),
+            frames: this.scene.anims.generateFrameNames('idle', {start: 1, end: 8, prefix: 'idle/idle_',suffix:'.png',zeroPad:1}),
             repeat: -1,
-
         })
-        this.scene.anims.create({
-            key: 'attackD',
-            frameRate: 14,
-            frames: this.scene.anims.generateFrameNames('attackD', {start: 1, end: 9, prefix: 'attackD_',suffix:'.png',zeroPad:1}),
+        //this.scene.anims.create({
+        //  key: 'attackD',
+        //   frameRate: 14,
+        //   frames: this.scene.anims.generateFrameNames('attackD', {start: 1, end: 9, prefix: 'attackD_',suffix:'.png',zeroPad:1}),
 
 
-        })
+        //})
         this.scene.anims.create({
             key: 'falling',
             frameRate: 12,
-            frames: this.scene.anims.generateFrameNames('falling', {start: 1, end: 3, prefix: 'falling_',suffix:'.png',zeroPad:1}),
+            frames: this.scene.anims.generateFrameNames('falling', {start: 1, end: 3, prefix: 'falling/falling_',suffix:'.png',zeroPad:1}),
 
 
         })
@@ -73,7 +80,7 @@ class Player {
         this.scene.anims.create({
             key: 'wallslide',
             frameRate: 12,
-            frames: this.scene.anims.generateFrameNames('wallslide', {start: 1, end: 3, prefix: 'wallslide_',suffix:'.png',zeroPad:1}),
+            frames: this.scene.anims.generateFrameNames('wallslide', {start: 1, end: 3, prefix: 'wallslide/wallslide_',suffix:'.png',zeroPad:1}),
             repeat: -1,
 
         })
@@ -87,6 +94,7 @@ class Player {
         else{
             this.attac = this.scene.add.rectangle(this.player.x-this.player.width+110, this.player.y+this.player.height, 60, 40).setOrigin(0, 0)
         }
+
 
         this.attac = this.scene.physics.add.existing(this.attac)
         this.attac.body.setAllowGravity(false);
@@ -102,22 +110,15 @@ class Player {
     }
     attaqueD(){
 
-
         this.attacD = this.scene.add.rectangle(this.player.x+40, this.player.y, 50, 40).setOrigin(0, 0)
-
-
-
         this.attacD = this.scene.physics.add.existing(this.attacD)
         this.attacD.body.setAllowGravity(false);
         this.attacD.body.setVelocityY(500);
-
-
-
         this.scene.time.delayedCall(1000, () => {
-            this.attacD.destroy()
+        this.attacD.destroy()
 
-        });
-    }
+         });
+       }
 
     //ICI ON MET NOS RACCOURCIS !
   dashR(){
@@ -204,6 +205,7 @@ class Player {
         this.scene.input.on('pointerup', function (pointer) {
             if (pointer.leftButtonReleased()) {
                 me.leftMouseDown = true;
+
             }
         });
         this.scene.input.on('pointerup', function (pointer) {
@@ -267,7 +269,7 @@ class Player {
 
         if (this.player.body.onFloor()) {
 
-            // this.player.play('walk', true)
+
         }
     }
 
@@ -316,12 +318,13 @@ class Player {
     //CETTE FONCTION SERT A ARRETER LE JOUEUR QUAND ON VA VERS LA DROITE/GAUCHE. SINON ON COURS SANS S'ARRETER QUAND ON KEYUP.
     stop() {
 
-            this.player.setVelocityX(0);
+
 
 
 
         if (this.player.body.onFloor()) {
-            this.player.play('idle',true)
+            this.player.setVelocityX(0);
+            this.player.play('idle', true)
         } else {
             this.player.setVelocityX(this.player.body.velocity.x * 0.6);
             this.player.setVelocityY(this.player.body.velocity.y * 0.6);
@@ -337,6 +340,7 @@ class Player {
             if (this.spaceDown && this.canJump) {
                 this.jump();
 
+
                 this.flag = false;
             }
 
@@ -351,9 +355,11 @@ class Player {
                 this.attaque(this.direction);
                 this.leftMouseDown=false;
 
+
+
             }
             if (this.rightMouseDown){
-                this.player.play('attackD')
+                //this.player.play('attackD')
                 this.attaqueD();
                 this.rightMouseDown=false;
 
