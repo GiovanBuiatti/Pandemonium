@@ -1,83 +1,87 @@
 {
-	"textures": [
-		{
-			"image": "falling.png",
-			"format": "RGBA8888",
-			"size": {
-				"w": 161,
-				"h": 107
-			},
-			"scale": 1,
-			"frames": [
-				{
-					"filename": "falling_2.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 130,
-						"h": 134
-					},
-					"spriteSourceSize": {
-						"x": 43,
-						"y": 25,
-						"w": 52,
-						"h": 105
-					},
-					"frame": {
-						"x": 1,
-						"y": 1,
-						"w": 52,
-						"h": 105
-					}
-				},
-				{
-					"filename": "falling_3.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 130,
-						"h": 134
-					},
-					"spriteSourceSize": {
-						"x": 43,
-						"y": 25,
-						"w": 52,
-						"h": 105
-					},
-					"frame": {
-						"x": 55,
-						"y": 1,
-						"w": 52,
-						"h": 105
-					}
-				},
-				{
-					"filename": "falling_1.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 130,
-						"h": 134
-					},
-					"spriteSourceSize": {
-						"x": 44,
-						"y": 25,
-						"w": 51,
-						"h": 104
-					},
-					"frame": {
-						"x": 109,
-						"y": 1,
-						"w": 51,
-						"h": 104
-					}
-				}
-			]
-		}
-	],
-	"meta": {
-		"app": "https://www.codeandweb.com/texturepacker",
-		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:84654d64a2407a1ecddd19cd3ba7a68d:e8e617c573c4a53d5a6eb07419696ef8:14239a17ff5b2e98e73c2865e18f335b$"
-	}
+  "frames": {
+    "falling/falling_1.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 130,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 130,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 130,
+        "h": 134
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "falling/falling_2.png": {
+      "frame": {
+        "x": 0,
+        "y": 134,
+        "w": 130,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 130,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 130,
+        "h": 134
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "falling/falling_3.png": {
+      "frame": {
+        "x": 0,
+        "y": 268,
+        "w": 130,
+        "h": 134
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 130,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 130,
+        "h": 134
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "falling.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 130,
+      "h": 402
+    },
+    "scale": 1
+  }
 }

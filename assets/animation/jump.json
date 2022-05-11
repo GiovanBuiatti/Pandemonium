@@ -1,6 +1,6 @@
 {
   "frames": {
-    "idle/idle_1.png": {
+    "jump/jump_1.png": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "idle/idle_2.png": {
+    "jump/jump_2.png": {
       "frame": {
         "x": 0,
         "y": 134,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "idle/idle_3.png": {
+    "jump/jump_3.png": {
       "frame": {
         "x": 0,
         "y": 268,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "idle/idle_4.png": {
+    "jump/jump_4.png": {
       "frame": {
         "x": 0,
         "y": 402,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "idle/idle_5.png": {
+    "jump/jump_5.png": {
       "frame": {
         "x": 0,
         "y": 536,
@@ -120,7 +120,7 @@
         "y": 0.5
       }
     },
-    "idle/idle_6.png": {
+    "jump/jump_6.png": {
       "frame": {
         "x": 0,
         "y": 670,
@@ -144,34 +144,10 @@
         "y": 0.5
       }
     },
-    "idle/idle_7.png": {
+    "jump/jump_7.png": {
       "frame": {
         "x": 0,
         "y": 804,
-        "w": 130,
-        "h": 134
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 130,
-        "h": 134
-      },
-      "sourceSize": {
-        "w": 130,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "idle/idle_8.png": {
-      "frame": {
-        "x": 0,
-        "y": 938,
         "w": 130,
         "h": 134
       },
@@ -196,11 +172,11 @@
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.7",
-    "image": "idle.png",
+    "image": "jump.png",
     "format": "RGBA8888",
     "size": {
       "w": 130,
-      "h": 1072
+      "h": 938
     },
     "scale": 1
   }
