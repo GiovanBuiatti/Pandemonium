@@ -6,7 +6,7 @@ class Player {
         this.cameras = scene;
         this.player = this.scene.physics.add.sprite(-1100, 450, 'attack').setOrigin(0, 0);
         this.player.body.setSize(50, 112)
-        this.player.body.setOffset(35, 15)
+
         this.player.setCollideWorldBounds(false);
         this.scene.physics.add.collider(this.player, this.scene.platforms);
         this.onWall = false;
@@ -73,7 +73,7 @@ class Player {
         this.scene.anims.create({
             key: 'run',
             frameRate: 13,
-            frames: this.scene.anims.generateFrameNames('run', {start: 1, end: 13, prefix: 'run_',suffix:'.png',zeroPad:1}),
+            frames: this.scene.anims.generateFrameNames('run', {start: 1, end: 13, prefix: 'Run/run_',suffix:'.png',zeroPad:1}),
 
 
         })
