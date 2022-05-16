@@ -4,20 +4,20 @@
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "sourceSize": {
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "pivot": {
         "x": 0.5,
@@ -26,22 +26,22 @@
     },
     "falling/falling_2.png": {
       "frame": {
-        "x": 0,
-        "y": 134,
-        "w": 130,
-        "h": 134
+        "x": 276,
+        "y": 0,
+        "w": 276,
+        "h": 264
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "sourceSize": {
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "pivot": {
         "x": 0.5,
@@ -50,22 +50,22 @@
     },
     "falling/falling_3.png": {
       "frame": {
-        "x": 0,
-        "y": 268,
-        "w": 130,
-        "h": 134
+        "x": 552,
+        "y": 0,
+        "w": 276,
+        "h": 264
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "sourceSize": {
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "pivot": {
         "x": 0.5,
@@ -79,8 +79,8 @@
     "image": "falling.png",
     "format": "RGBA8888",
     "size": {
-      "w": 130,
-      "h": 402
+      "w": 828,
+      "h": 264
     },
     "scale": 1
   }

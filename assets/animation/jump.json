@@ -4,20 +4,20 @@
       "frame": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "sourceSize": {
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "pivot": {
         "x": 0.5,
@@ -26,22 +26,22 @@
     },
     "jump/jump_2.png": {
       "frame": {
-        "x": 0,
-        "y": 134,
-        "w": 130,
-        "h": 134
+        "x": 276,
+        "y": 0,
+        "w": 276,
+        "h": 264
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "sourceSize": {
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "pivot": {
         "x": 0.5,
@@ -50,22 +50,22 @@
     },
     "jump/jump_3.png": {
       "frame": {
-        "x": 0,
-        "y": 268,
-        "w": 130,
-        "h": 134
+        "x": 552,
+        "y": 0,
+        "w": 276,
+        "h": 264
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "sourceSize": {
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "pivot": {
         "x": 0.5,
@@ -74,22 +74,22 @@
     },
     "jump/jump_4.png": {
       "frame": {
-        "x": 0,
-        "y": 402,
-        "w": 130,
-        "h": 134
+        "x": 828,
+        "y": 0,
+        "w": 276,
+        "h": 264
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "sourceSize": {
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "pivot": {
         "x": 0.5,
@@ -98,22 +98,22 @@
     },
     "jump/jump_5.png": {
       "frame": {
-        "x": 0,
-        "y": 536,
-        "w": 130,
-        "h": 134
+        "x": 1104,
+        "y": 0,
+        "w": 276,
+        "h": 264
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "sourceSize": {
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "pivot": {
         "x": 0.5,
@@ -122,22 +122,22 @@
     },
     "jump/jump_6.png": {
       "frame": {
-        "x": 0,
-        "y": 670,
-        "w": 130,
-        "h": 134
+        "x": 1380,
+        "y": 0,
+        "w": 276,
+        "h": 264
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "sourceSize": {
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "pivot": {
         "x": 0.5,
@@ -146,22 +146,22 @@
     },
     "jump/jump_7.png": {
       "frame": {
-        "x": 0,
-        "y": 804,
-        "w": 130,
-        "h": 134
+        "x": 1656,
+        "y": 0,
+        "w": 276,
+        "h": 264
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "sourceSize": {
-        "w": 130,
-        "h": 134
+        "w": 276,
+        "h": 264
       },
       "pivot": {
         "x": 0.5,
@@ -175,8 +175,8 @@
     "image": "jump.png",
     "format": "RGBA8888",
     "size": {
-      "w": 130,
-      "h": 938
+      "w": 1932,
+      "h": 264
     },
     "scale": 1
   }
