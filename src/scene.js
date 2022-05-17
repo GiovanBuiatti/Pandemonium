@@ -92,7 +92,7 @@ class scene extends Phaser.Scene {
         this.player.update()
         console.log(this.player.player.body.onWall())
 
-        this.player.player.play('jump', true)
+
 
 
 

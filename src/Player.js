@@ -41,8 +41,6 @@ class Player {
 
 
         })
-
-
         this.scene.anims.create({
             key: 'jump',
             frameRate: 18,
@@ -253,9 +251,8 @@ class Player {
     jump() {
 
             this.canJump = false
+        this.player.play('jump',true)
             this.player.setVelocityY(-500);
-
-
     }
 
     //DEPLACEMENT VERS LA DROITE
@@ -314,14 +311,12 @@ class Player {
 
     //CETTE FONCTION SERT A ARRETER LE JOUEUR QUAND ON VA VERS LA DROITE/GAUCHE. SINON ON COURS SANS S'ARRETER QUAND ON KEYUP.
     stop() {
-
-
-
-
-
         if (this.player.body.onFloor()) {
             this.player.setVelocityX(0);
-            this.player.play('idle', true)
+            if(this.canJump===true) {
+                this.player.play('idle', true)
+            }
+
         } else {
             this.player.setVelocityX(this.player.body.velocity.x * 0.6);
             this.player.setVelocityY(this.player.body.velocity.y * 0.6);
@@ -337,9 +332,6 @@ class Player {
             if (this.spaceDown && this.canJump) {
 
                 this.jump();
-
-
-
                 this.flag = false;
             }
 
@@ -353,9 +345,6 @@ class Player {
                 this.player.play('attack')
                 this.attaque(this.direction);
                 this.leftMouseDown=false;
-
-
-
             }
             if (this.rightMouseDown){
                 //this.player.play('attackD')
@@ -369,14 +358,17 @@ class Player {
 
             switch (true) {
                 case this.qDown:
-                    this.player.play('run', true)
-
+                    if(this.canJump===true) {
+                        this.player.play('run', true)
+                    }
                     this.moveLeft()
                     this.direction='gauche'
                     this.flagleft = false;
                     break;
                 case this.dDown:
-                    this.player.play('run', true)
+                    if(this.canJump===true) {
+                        this.player.play('run', true)
+                    }
                     this.moveRight();
                     this.direction='droite'
                     this.flagright = false;
