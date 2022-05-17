@@ -45,9 +45,8 @@ class Player {
 
         this.scene.anims.create({
             key: 'jump',
-            frameRate: 8,
-            frames: this.scene.anims.generateFrameNames('jump', {start: 1, end: 8, prefix: 'jump/jump_',suffix:'.png',zeroPad:1}),
-            repeat: -1,
+            frameRate: 18,
+            frames: this.scene.anims.generateFrameNames('jump', {start: 1, end: 7, prefix: 'jump/jump_',suffix:'.png',zeroPad:1}),
         })
 
         this.scene.anims.create({
@@ -253,10 +252,8 @@ class Player {
 
     jump() {
 
-
             this.canJump = false
             this.player.setVelocityY(-500);
-
 
 
     }
@@ -338,7 +335,9 @@ class Player {
                 this.canJump=true
             }
             if (this.spaceDown && this.canJump) {
+
                 this.jump();
+
 
 
                 this.flag = false;
@@ -386,7 +385,6 @@ class Player {
                     this.stop();
                     break;
                 case this.player.body.onFloor(false):
-                    this.player.play('walk', false)
                     break;
             }
         this.moveRightRelease();
