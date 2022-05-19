@@ -36,16 +36,17 @@ class scene extends Phaser.Scene {
         });
         this.add.sprite(-1100, 450, 'boule').play('boule')
 
+
+
+        const backgroundImage = this.add.image(-400, 0, 'background').setOrigin(0, 0);
         this.anims.create({
             key: 'beam',
             frames: this.anims.generateFrameNumbers('beam', {start: 0, end: 120}),
             frameRate: 60,
             repeat: -1
+
         });
-        this.add.sprite(200, 300, 'beam').play('beam')
-
-        const backgroundImage = this.add.image(0, 0, 'background').setOrigin(400, 0);
-
+        this.add.sprite(200, 300, 'beam').play('beam').setBlendMode("SCREEN")
         backgroundImage.setScale(1, 0.8);
 
         const map = this.make.tilemap({key: 'map'});
