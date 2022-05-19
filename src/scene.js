@@ -13,8 +13,10 @@ class scene extends Phaser.Scene {
         this.load.atlas('wallslide', 'assets/animation/wallslide.png', 'assets/animation/wallslide.json');
         this.load.atlas('falling', 'assets/animation/falling.png', 'assets/animation/falling.json');
         this.load.atlas('jump', 'assets/animation/jump.png', 'assets/animation/jump.json');
-        this.load.image('tiles', 'assets/tilesets/platformPack_tilesheet.png');
 
+        this.load.image('tiles', 'assets/tilesets/platformPack_tilesheet.png');
+        this.load.spritesheet('boule', 'assets/fx/boule.png',{ frameWidth: 1024, frameHeight: 1024 });
+        this.load.spritesheet('beam', 'assets/fx/beam.png',{ frameWidth: 1024, frameHeight: 1024 });
 
         // Load the export Tiled JSON
         this.load.tilemapTiledJSON('map', 'assets/tilemaps/Alpha1.json');
@@ -24,6 +26,22 @@ class scene extends Phaser.Scene {
     create() {
 
         this.input.mouse.disableContextMenu();
+        this.anims.create({
+            key: 'beam',
+            frames: this.anims.generateFrameNumbers('beam', {start: 0, end: 120}),
+            frameRate: 60,
+            repeat: -1
+        });
+        this.add.sprite(-1100, 600, 'beam').play('beam')
+
+
+        this.anims.create({
+            key: 'boule',
+            frames: this.anims.generateFrameNumbers('boule', {start: 0, end: 120}),
+            frameRate: 120,
+            repeat: -1
+        });
+        this.add.sprite(-1100, 450, 'boule').play('boule')
 
 
 
