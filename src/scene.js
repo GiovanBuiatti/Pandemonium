@@ -26,13 +26,6 @@ class scene extends Phaser.Scene {
     create() {
 
         this.input.mouse.disableContextMenu();
-        this.anims.create({
-            key: 'beam',
-            frames: this.anims.generateFrameNumbers('beam', {start: 0, end: 120}),
-            frameRate: 60,
-            repeat: -1
-        });
-        this.add.sprite(-1100, 600, 'beam').play('beam')
 
 
         this.anims.create({
@@ -43,10 +36,15 @@ class scene extends Phaser.Scene {
         });
         this.add.sprite(-1100, 450, 'boule').play('boule')
 
+        this.anims.create({
+            key: 'beam',
+            frames: this.anims.generateFrameNumbers('beam', {start: 0, end: 120}),
+            frameRate: 60,
+            repeat: -1
+        });
+        this.add.sprite(200, 300, 'beam').play('beam')
 
-
-
-        const backgroundImage = this.add.image(0, 0, 'background').setOrigin(0, 0);
+        const backgroundImage = this.add.image(0, 0, 'background').setOrigin(400, 0);
 
         backgroundImage.setScale(1, 0.8);
 
