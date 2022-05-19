@@ -46,7 +46,7 @@ class scene extends Phaser.Scene {
             repeat: -1
 
         });
-        this.add.sprite(200, 300, 'beam').play('beam').setBlendMode("SCREEN")
+        this.add.sprite(200, 300, 'beam').play('beam')
         backgroundImage.setScale(1, 0.8);
 
         const map = this.make.tilemap({key: 'map'});
