@@ -1,0 +1,231 @@
+{
+  "frames": {
+    "Dash/dash_1.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "sourceSize": {
+        "w": 276,
+        "h": 264
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dash/dash_2.png": {
+      "frame": {
+        "x": 276,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "sourceSize": {
+        "w": 276,
+        "h": 264
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dash/dash_3.png": {
+      "frame": {
+        "x": 552,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "sourceSize": {
+        "w": 276,
+        "h": 264
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dash/dash_4.png": {
+      "frame": {
+        "x": 828,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "sourceSize": {
+        "w": 276,
+        "h": 264
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dash/dash_5.png": {
+      "frame": {
+        "x": 1104,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "sourceSize": {
+        "w": 276,
+        "h": 264
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dash/dash_6.png": {
+      "frame": {
+        "x": 1380,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "sourceSize": {
+        "w": 276,
+        "h": 264
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dash/dash_7.png": {
+      "frame": {
+        "x": 1656,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "sourceSize": {
+        "w": 276,
+        "h": 264
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dash/dash_8.png": {
+      "frame": {
+        "x": 0,
+        "y": 264,
+        "w": 276,
+        "h": 264
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "sourceSize": {
+        "w": 276,
+        "h": 264
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Dash/dash_9.png": {
+      "frame": {
+        "x": 0,
+        "y": 528,
+        "w": 276,
+        "h": 264
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 276,
+        "h": 264
+      },
+      "sourceSize": {
+        "w": 276,
+        "h": 264
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "dash.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1932,
+      "h": 792
+    },
+    "scale": 1
+  }
+}

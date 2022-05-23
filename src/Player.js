@@ -43,8 +43,13 @@ class Player {
         })
         this.scene.anims.create({
             key: 'jump',
-            frameRate: 18,
+            frameRate: 12,
             frames: this.scene.anims.generateFrameNames('jump', {start: 1, end: 7, prefix: 'jump/jump_',suffix:'.png',zeroPad:1}),
+        })
+        this.scene.anims.create({
+            key: 'dash',
+            frameRate: 36,
+            frames: this.scene.anims.generateFrameNames('dash', {start: 1, end: 9, prefix: 'Dash/dash_',suffix:'.png',zeroPad:1}),
         })
 
         this.scene.anims.create({
@@ -53,13 +58,13 @@ class Player {
             frames: this.scene.anims.generateFrameNames('idle', {start: 1, end: 8, prefix: 'idle/idle_',suffix:'.png',zeroPad:1}),
             repeat: -1,
         })
-        //this.scene.anims.create({
-        //  key: 'attackD',
-        //   frameRate: 14,
-        //   frames: this.scene.anims.generateFrameNames('attackD', {start: 1, end: 9, prefix: 'attackD_',suffix:'.png',zeroPad:1}),
 
+        this.scene.anims.create({
+          key: 'attackD',
+          frameRate: 14,
+          frames: this.scene.anims.generateFrameNames('attackD', {start: 1, end: 8, prefix: 'attackD/attackD_',suffix:'.png',zeroPad:1}),
+        })
 
-        //})
         this.scene.anims.create({
             key: 'falling',
             frameRate: 12,
@@ -96,7 +101,7 @@ class Player {
         this.attac.body.setAllowGravity(false);
         this.attac.body.setVelocityY(-700);
 
-        this.scene.time.delayedCall(300, () => {
+        this.scene.time.delayedCall(1000, () => {
             this.attac.destroy()
             this.isattaque=false
 
@@ -108,8 +113,9 @@ class Player {
         this.attacD = this.scene.physics.add.existing(this.attacD)
         this.attacD.body.setAllowGravity(false);
         this.attacD.body.setVelocityY(500);
-        this.scene.time.delayedCall(1000, () => {
-        this.attacD.destroy()
+
+        this.scene.time.delayedCall(200, () => {
+            this.attacD.destroy()
 
          });
        }
@@ -118,6 +124,7 @@ class Player {
   dashR(){
       if(this.dDown && this.shiftDown) {
           if (this.lockDash == 0) {
+              this.player.play('dash', true)
               this.lockDash = 1
               let me = this;
               this.tween = this.scene.tweens.add({
@@ -138,6 +145,7 @@ class Player {
     dashL() {
         if (this.qDown && this.shiftDown) {
             if (this.lockDash == 0) {
+                this.player.play('dash', true)
                 this.lockDash = 1
                 let me = this;
                 this.tween = this.scene.tweens.add({
@@ -333,6 +341,7 @@ class Player {
             }
 
             if (this.qDown && this.shiftDown){
+
                 this.dashL();
             }
             if (this.dDown && this.shiftDown){
@@ -345,12 +354,12 @@ class Player {
                 this.leftMouseDown=false;}
             }
             if (this.rightMouseDown){
-                //this.player.play('attackD')
+                this.player.play('attackD')
                 this.attaqueD();
                 this.rightMouseDown=false;
 
             }
-            if(this.player.body.velocity.y > 0){
+            if(this.player.body.velocity.y > 120){
                 this.player.play('falling', true)
             }
 
