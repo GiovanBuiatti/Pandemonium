@@ -84,30 +84,27 @@ class Player {
     }
 
     attaque(direction){
-
+        this.isattaque=true
         if(direction==='droite'){
-            this.attac = this.scene.add.rectangle(this.player.x+this.player.width-40, this.player.y+this.player.height, 60, 40).setOrigin(0, 0)
+            this.attac = this.scene.add.rectangle(this.player.x+this.player.width-250, this.player.y+50, 60, 40).setOrigin(0, 0)
         }
         else{
-            this.attac = this.scene.add.rectangle(this.player.x-this.player.width+110, this.player.y+this.player.height, 60, 40).setOrigin(0, 0)
+            this.attac = this.scene.add.rectangle(this.player.x-this.player.width+190, this.player.y+50, 60, 40).setOrigin(0, 0)
         }
-
 
         this.attac = this.scene.physics.add.existing(this.attac)
         this.attac.body.setAllowGravity(false);
         this.attac.body.setVelocityY(-700);
 
-
-
-
-        this.scene.time.delayedCall(1000, () => {
+        this.scene.time.delayedCall(300, () => {
             this.attac.destroy()
+            this.isattaque=false
 
         });
     }
     attaqueD(){
 
-        this.attacD = this.scene.add.rectangle(this.player.x+40, this.player.y, 50, 40).setOrigin(0, 0)
+        this.attacD = this.scene.add.rectangle(this.player.x-40, this.player.y, 80, 40).setOrigin(0, 0)
         this.attacD = this.scene.physics.add.existing(this.attacD)
         this.attacD.body.setAllowGravity(false);
         this.attacD.body.setVelocityY(500);
@@ -313,7 +310,7 @@ class Player {
     stop() {
         if (this.player.body.onFloor()) {
             this.player.setVelocityX(0);
-            if(this.canJump===true) {
+            if(this.canJump===true && this.isattaque===false) {
                 this.player.play('idle', true)
             }
 
@@ -342,9 +339,10 @@ class Player {
                 this.dashR();
              }
             if (this.leftMouseDown){
+                if(this.isattaque===false){
                 this.player.play('attack')
                 this.attaque(this.direction);
-                this.leftMouseDown=false;
+                this.leftMouseDown=false;}
             }
             if (this.rightMouseDown){
                 //this.player.play('attackD')

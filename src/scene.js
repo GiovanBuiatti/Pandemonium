@@ -12,7 +12,8 @@ class scene extends Phaser.Scene {
         //this.load.atlas('attackD', 'assets/animation/attackD.png', 'assets/animation/attackD.json');
         this.load.atlas('wallslide', 'assets/animation/wallslide.png', 'assets/animation/wallslide.json');
         this.load.atlas('falling', 'assets/animation/falling.png', 'assets/animation/falling.json');
-        this.load.atlas('jump', 'assets/animation/jump.png', 'assets/animation/jump.json');
+
+        this.load.atlas('idleEnnemi', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
 
         this.load.image('tiles', 'assets/tilesets/platformPack_tilesheet.png');
         this.load.spritesheet('boule', 'assets/fx/boule.png',{ frameWidth: 1024, frameHeight: 1024 });
@@ -31,16 +32,11 @@ class scene extends Phaser.Scene {
 
 
 
-        this.anims.create({
-            key: 'beam',
-            frames: this.anims.generateFrameNumbers('beam', {start: 0, end: 63}),
-            frameRate: 60,
-            repeat: -1
 
-        });
+
 
         const backgroundImage = this.add.image(-400, 0, 'background').setOrigin(0, 0);
-        this.add.sprite(200, 300, 'beam').play('beam')
+
         backgroundImage.setScale(1, 0.8);
 
         const map = this.make.tilemap({key: 'map'});

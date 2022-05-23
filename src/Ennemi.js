@@ -2,11 +2,13 @@ class Ennemi {
 
 
     constructor(scene) {
+
         this.scene = scene;
         this.cameras = scene;
-        this.sprite=this.scene.physics.add.sprite(this.scene.player.player.x,this.scene.player.player.y,'attack')
         this.Animations()
-        this.sprite.body.setSize(50, 112)
+        this.sprite=this.scene.physics.add.sprite(this.scene.player.player.x,this.scene.player.player.y,'idleEnnemi','idleE1/idleE1.png')
+        this.sprite.play('idleE')
+        this.sprite.body.setSize(90, 150)
         this.scene.physics.add.collider(this.sprite,this.scene.collide)
         this.projectil=false
     }
@@ -29,6 +31,7 @@ class Ennemi {
                 console.log('yolo')
            })
             this.scene.physics.add.collider(this.boule, this.scene.player.player, (boule, player) => {
+
                 boule.destroy()
                 // player.body.enable=false
                 // player.visible=false
@@ -45,6 +48,13 @@ class Ennemi {
             frameRate: 120,
             repeat: -1
         });
+        this.scene.anims.create({
+            key: 'idleE',
+            frameRate: 8,
+            frames: this.scene.anims.generateFrameNames('idleEnnemi', {start: 1, end: 6, prefix: 'idleE1/idleE',suffix:'.png',zeroPad:1}),
+            repeat : -1
+
+        })
     }
 }
 
