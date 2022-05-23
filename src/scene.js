@@ -28,24 +28,18 @@ class scene extends Phaser.Scene {
         this.input.mouse.disableContextMenu();
 
 
-        this.anims.create({
-            key: 'boule',
-            frames: this.anims.generateFrameNumbers('boule', {start: 0, end: 120}),
-            frameRate: 120,
-            repeat: -1
-        });
-        this.add.sprite(-1100, 450, 'boule').play('boule')
 
 
 
-        const backgroundImage = this.add.image(-400, 0, 'background').setOrigin(0, 0);
         this.anims.create({
             key: 'beam',
-            frames: this.anims.generateFrameNumbers('beam', {start: 0, end: 120}),
+            frames: this.anims.generateFrameNumbers('beam', {start: 0, end: 63}),
             frameRate: 60,
             repeat: -1
 
         });
+
+        const backgroundImage = this.add.image(-400, 0, 'background').setOrigin(0, 0);
         this.add.sprite(200, 300, 'beam').play('beam')
         backgroundImage.setScale(1, 0.8);
 
@@ -71,6 +65,7 @@ class scene extends Phaser.Scene {
         });
 
         this.player = new Player(this)
+        this.ennemi = new Ennemi(this)
 
 
 
@@ -107,7 +102,8 @@ class scene extends Phaser.Scene {
 
         this.player.move();
         this.player.update()
-        console.log(this.player.player.body.onWall())
+        this.ennemi.update()
+
 
 
 
