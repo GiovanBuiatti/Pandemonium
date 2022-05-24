@@ -113,6 +113,12 @@ class Player {
         this.attacD = this.scene.physics.add.existing(this.attacD)
         this.attacD.body.setAllowGravity(false);
         this.attacD.body.setVelocityY(500);
+        this.scene.physics.add.collider(this.attacD,this.scene.ennemi.sprite,(attack,ennemy)=>{
+            this.canJump=true
+            attack.destroy()
+
+        },null,this)
+
 
         this.scene.time.delayedCall(200, () => {
             this.attacD.destroy()

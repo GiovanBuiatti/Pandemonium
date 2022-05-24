@@ -36,9 +36,10 @@ class scene extends Phaser.Scene {
 
 
 
-        const backgroundImage = this.add.image(-400, 0, 'background').setOrigin(0, 0);
+        const backgroundImage = this.add.image(0, 0, 'background').setOrigin(0, 0);
 
-        backgroundImage.setScale(1, 0.8);
+        backgroundImage.setScale(1.5, 1);
+        backgroundImage.setScrollFactor(0)
 
         const map = this.make.tilemap({key: 'map'});
 
@@ -60,9 +61,9 @@ class scene extends Phaser.Scene {
             this.collide.add(collider)
 
         });
-
-        this.player = new Player(this)
         this.ennemi = new Ennemi(this)
+        this.player = new Player(this)
+
 
 
 

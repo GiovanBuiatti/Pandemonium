@@ -6,7 +6,7 @@ class Ennemi {
         this.scene = scene;
         this.cameras = scene;
         this.Animations()
-        this.sprite=this.scene.physics.add.sprite(this.scene.player.player.x,this.scene.player.player.y,'idleEnnemi','idleE1/idleE1.png')
+        this.sprite=this.scene.physics.add.sprite(2050, -2000,'idleEnnemi','idleE1/idleE1.png')
         this.sprite.play('idleE')
         this.sprite.body.setSize(90, 150)
         this.scene.physics.add.collider(this.sprite,this.scene.collide)
