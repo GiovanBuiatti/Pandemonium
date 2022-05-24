@@ -3,6 +3,7 @@ const config = {
     parent: 'game',
     width: 1280,
     heigth: 720,
+    pixelArt:true,
 
     physics: {
         default: 'arcade',
