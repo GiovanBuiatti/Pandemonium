@@ -137,7 +137,7 @@ class Player {
                   targets: this,
                   d: '+=10',
                   ease: 'Circ.easeInOut',
-                  duration: 250,
+                  duration: 150,
                   onComplete: function () {
                       me.d = 1
                       me.shiftDown = false;
@@ -158,7 +158,7 @@ class Player {
                     targets: this,
                     d: '+=10',
                     ease: 'Circ.easeInOut',
-                    duration: 250,
+                    duration: 150,
                     onComplete: function () {
                         me.d = 1
                         me.shiftDown = false;
