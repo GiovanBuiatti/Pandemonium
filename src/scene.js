@@ -6,6 +6,7 @@ class scene extends Phaser.Scene {
         this.load.image('tiles', 'assets/tilesets/platformPack_tilesheet.png');
         this.load.image('fp', 'assets/tilesets/firstplan.png');
         this.load.image('tp', 'assets/tilesets/thirdplan.png');
+        this.load.image('sp', 'assets/tilesets/secondplan.png');
 
         // At last image must be loaded with its JSON
         this.load.atlas('player', 'assets/images/kenney_player.png', 'assets/images/kenney_player_atlas.json');
@@ -37,20 +38,23 @@ class scene extends Phaser.Scene {
 
 
 
-        const backgroundImage = this.add.image(0, 0, 'background').setOrigin(0, 0);
+        const backgroundImage = this.add.image(0, 600, 'background').setOrigin(0, 0);
 
-        backgroundImage.setScale(1.5, 1);
-        backgroundImage.setScrollFactor(0)
+
+        backgroundImage.setScrollFactor(1)
 
         const map = this.make.tilemap({key: 'map'});
 
 
         const tileset1 = map.addTilesetImage('firstplan', 'fp');
+
         const tileset = map.addTilesetImage('Alpha_test1', 'tiles');
         const tileset2 = map.addTilesetImage('thirdplan', 'tp');
+        const tileset3 = map.addTilesetImage('secondplan', 'sp');
 
 
         this.thirdP = map.createLayer('troisiemeplan', tileset2);
+        this.secondP = map.createLayer('secondplan', tileset3);
         this.platforms = map.createLayer('Sol', tileset);
         this.firstP = map.createLayer('premierplan', tileset1);
 
