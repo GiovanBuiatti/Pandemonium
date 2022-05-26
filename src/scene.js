@@ -7,6 +7,8 @@ class scene extends Phaser.Scene {
         this.load.image('fp', 'assets/tilesets/firstplan.png');
         this.load.image('tp', 'assets/tilesets/thirdplan.png');
         this.load.image('sp', 'assets/tilesets/secondplan.png');
+        this.load.image('pp', 'assets/tilesets/playerplan.png');
+        this.load.image('tourelle', 'assets/images/tourelle.png');
 
         // At last image must be loaded with its JSON
         this.load.atlas('player', 'assets/images/kenney_player.png', 'assets/images/kenney_player_atlas.json');
@@ -48,14 +50,14 @@ class scene extends Phaser.Scene {
 
         const tileset1 = map.addTilesetImage('firstplan', 'fp');
 
-        const tileset = map.addTilesetImage('Alpha_test1', 'tiles');
+        const tileset = map.addTilesetImage('playerplan', 'pp');
         const tileset2 = map.addTilesetImage('thirdplan', 'tp');
         const tileset3 = map.addTilesetImage('secondplan', 'sp');
 
 
         this.thirdP = map.createLayer('troisiemeplan', tileset2);
         this.secondP = map.createLayer('secondplan', tileset3);
-        this.platforms = map.createLayer('Sol', tileset);
+        this.platforms = map.createLayer('planjoueur', tileset);
         this.firstP = map.createLayer('premierplan', tileset1);
 
 
@@ -77,6 +79,7 @@ class scene extends Phaser.Scene {
 
         });
         this.ennemi = new Ennemi(this)
+
         this.player = new Player(this)
 
 

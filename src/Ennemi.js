@@ -6,15 +6,22 @@ class Ennemi {
         this.scene = scene;
         this.cameras = scene;
         this.Animations()
-        this.sprite=this.scene.physics.add.sprite(2050, -2000,'idleEnnemi','idleE1/idleE1.png')
-        this.sprite.play('idleE')
+        this.sprite=this.scene.physics.add.sprite(5000, 2300,'idleEnnemi','idleE1/idleE1.png')
+
+
+        this.sprite.play('idleE', true)
         this.sprite.body.setSize(90, 150)
         this.scene.physics.add.collider(this.sprite,this.scene.collide)
         this.projectil=false
+
+
+
+
     }
     update(){
         if(Phaser.Math.Distance.Between(this.scene.player.player.x,this.scene.player.player.y,this.sprite.x,this.sprite.y)<500){
             this.fire()
+
         }
     }
     fire(){

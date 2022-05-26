@@ -1,8 +1,8 @@
 const config = {
     type: Phaser.AUTO,
     parent: 'game',
-    width: 1920,
-    heigth: 1080,
+    width: 1280,
+    heigth: 720,
     pixelArt:true,
 
     physics: {
