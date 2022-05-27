@@ -25,7 +25,7 @@ class Player {
         this.initKeyboardQWERTY()
         this.direction='droite'
         this.directionjump=1
-        this.canJump=true
+        this.player.canJump=true
         this.compteur=0
         this.jumpWallon=false
 
@@ -113,11 +113,13 @@ class Player {
         this.attacD = this.scene.physics.add.existing(this.attacD)
         this.attacD.body.setAllowGravity(false);
         this.attacD.body.setVelocityY(500);
-        this.scene.physics.add.collider(this.attacD,this.scene.ennemi.sprite,(attack,ennemy)=>{
-            this.canJump=true
-            attack.destroy()
+        for(let i=1;i<=this.scene.groupEnnemie.length-1;i++) {
+            this.scene.physics.add.collider(this.attacD, this.scene.groupEnnemie[i].sprite, (attack, ennemy) => {
+                this.canJump = true
+                attack.destroy()
 
-        },null,this)
+            }, null, this)
+        }
 
 
         this.scene.time.delayedCall(200, () => {

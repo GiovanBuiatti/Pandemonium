@@ -78,7 +78,13 @@ class scene extends Phaser.Scene {
             this.collide.add(collider)
 
         });
-        this.ennemi = new Ennemi(this)
+       this.groupEnnemie=[]
+        map.getObjectLayer('ennemi').objects.forEach((obj) => {
+             this.tourelleSprite = new Ennemi(this,obj.x,obj.y)
+            this.groupEnnemie.push(this.tourelleSprite)
+            })
+
+        this.groupEnnemie.push(new Ennemi(this,0,0))
 
         this.player = new Player(this)
 
@@ -118,7 +124,7 @@ class scene extends Phaser.Scene {
 
         this.player.move();
         this.player.update()
-        this.ennemi.update()
+        this.groupEnnemie.forEach(tourelleSprite => tourelleSprite.update())
 
 
 
