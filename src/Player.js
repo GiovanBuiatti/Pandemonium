@@ -30,6 +30,7 @@ class Player {
         this.jumpWallon=false
 
 
+
     }
 
     animation(){

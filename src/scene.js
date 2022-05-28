@@ -9,6 +9,9 @@ class scene extends Phaser.Scene {
         this.load.image('sp', 'assets/tilesets/secondplan.png');
         this.load.image('pp', 'assets/tilesets/playerplan.png');
         this.load.image('tourelle', 'assets/images/tourelle.png');
+        this.load.image('pvup', 'assets/images/pvu.png');
+        this.load.image('pvdown', 'assets/images/pvd.png');
+
 
         // At last image must be loaded with its JSON
         this.load.atlas('player', 'assets/images/kenney_player.png', 'assets/images/kenney_player_atlas.json');
@@ -32,12 +35,6 @@ class scene extends Phaser.Scene {
     create() {
 
         this.input.mouse.disableContextMenu();
-
-
-
-
-
-
 
 
         const backgroundImage = this.add.image(0, 600, 'background').setOrigin(0, 0);
