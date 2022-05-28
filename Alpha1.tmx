@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="159" height="63" tilewidth="64" tileheight="64" infinite="1" nextlayerid="18" nextobjectid="204">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="159" height="63" tilewidth="64" tileheight="64" infinite="1" nextlayerid="18" nextobjectid="213">
  <tileset firstgid="1" name="Alpha_test1" tilewidth="64" tileheight="64" tilecount="98" columns="14">
   <image source="../FairyTales/assets/Backups/platformPack_tilesheet.png" width="896" height="448"/>
  </tileset>
@@ -639,27 +639,26 @@
   <object id="104" name="stick" x="2500.45" y="2131.27" width="287.488" height="890.402"/>
   <object id="105" x="2498.4" y="1462.33" width="289.857" height="677.97"/>
   <object id="106" x="3021" y="2403" width="710" height="54"/>
-  <object id="108" x="3538.67" y="2405.33" width="193.667" height="719.667"/>
+  <object id="108" name="stick" x="3725.67" y="2405.33" width="6.667" height="719.667"/>
   <object id="109" x="3476" y="3101.33" width="65" height="241.333"/>
   <object id="110" x="3476" y="3298" width="1021.33" height="115.333"/>
-  <object id="111" x="4432" y="2404" width="236" height="1070"/>
-  <object id="112" x="4432" y="2400" width="1294" height="202"/>
-  <object id="113" x="5204" y="2017.33" width="523" height="192.667"/>
-  <object id="114" x="5540.5" y="2208" width="186.25" height="272"/>
-  <object id="115" x="6225" y="1949.5" width="909" height="388.5"/>
+  <object id="111" name="stick" x="4432" y="2409.33" width="9.33333" height="1064.67"/>
+  <object id="112" x="4432" y="2409.33" width="1230" height="192.667"/>
+  <object id="113" name="stick" x="5204" y="2018.66" width="9.66667" height="192.667"/>
+  <object id="114" name="stick" x="5715.83" y="2022" width="10.9167" height="1236"/>
+  <object id="115" name="stick" x="6225" y="1949.5" width="8.75758" height="388.5"/>
   <object id="117" x="6229.5" y="1639.5" width="202" height="66"/>
   <object id="118" x="6546" y="1448" width="210" height="58"/>
   <object id="119" x="6473" y="1821.5" width="204" height="66"/>
-  <object id="120" x="6732" y="1249" width="402.5" height="965"/>
+  <object id="120" name="stick" x="6732" y="1249" width="9.16667" height="704.394"/>
   <object id="122" x="6512" y="2314.67" width="128" height="356"/>
-  <object id="123" x="6222" y="2528" width="910.667" height="398.667"/>
-  <object id="124" x="6994" y="2288" width="139" height="268"/>
-  <object id="125" x="5500" y="2542" width="227" height="644"/>
+  <object id="123" name="stick" x="6222" y="2573.33" width="10.667" height="353.334"/>
+  <object id="124" name="stick" x="7120.67" y="2288" width="12.3333" height="638.667"/>
   <object id="127" x="5660" y="3172.09" width="2576" height="307.909"/>
   <object id="128" x="7824" y="3042" width="646" height="262"/>
   <object id="129" x="7956" y="2914" width="572" height="284"/>
   <object id="130" x="7952.67" y="1696" width="1445.33" height="70.6667"/>
-  <object id="131" x="8220" y="1744" width="408" height="1232"/>
+  <object id="131" name="stick" x="8220" y="1744" width="408" height="1232"/>
   <object id="133" x="7316" y="1889.67" width="251.333" height="63"/>
   <object id="134" x="7760" y="2014" width="203" height="60"/>
   <object id="135" x="8032" y="2212" width="188" height="60"/>
@@ -688,5 +687,13 @@
   <object id="166" x="7094" y="1506" width="229" height="71"/>
   <object id="167" x="7094" y="1574" width="124" height="72.5"/>
   <object id="172" x="1528" y="3062" width="155.818" height="43.5455"/>
+  <object id="204" x="3529" y="3104" width="197" height="22"/>
+  <object id="205" x="5541" y="2204" width="110" height="253"/>
+  <object id="206" name="stick" x="7126.08" y="1252.14" width="9.16667" height="708.061"/>
+  <object id="207" x="6732.17" y="1247.33" width="403" height="136.667"/>
+  <object id="208" x="6228" y="1948" width="552" height="77.3333"/>
+  <object id="209" name="stick" x="7122.67" y="1957.33" width="13.3333" height="330.667"/>
+  <object id="211" x="6226.67" y="2564" width="898.667" height="365.333"/>
+  <object id="212" x="5205.33" y="2017.33" width="522" height="108"/>
  </objectgroup>
 </map>

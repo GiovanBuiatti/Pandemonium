@@ -5,7 +5,7 @@ class Player {
         this.scene = scene;
         this.cameras = scene;
         this.player = this.scene.physics.add.sprite(1500, 3350, 'attack').setOrigin(0, 0);
-        this.player.body.setSize(50, 112)
+        this.player.body.setSize(50, 120)
 
         this.player.setCollideWorldBounds(false);
         this.scene.physics.add.collider(this.player, this.scene.platforms);
