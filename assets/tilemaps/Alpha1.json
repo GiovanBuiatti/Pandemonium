@@ -1635,18 +1635,18 @@
                  "y":3298
                 }, 
                 {
-                 "height":1064.66666666667,
+                 "height":1064.67,
                  "id":111,
                  "name":"stick",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":9.33333333333394,
+                 "width":9.33333,
                  "x":4432,
-                 "y":2409.33333333333
+                 "y":2409.33
                 }, 
                 {
-                 "height":192.666666666667,
+                 "height":192.667,
                  "id":112,
                  "name":"",
                  "rotation":0,
@@ -1654,7 +1654,7 @@
                  "visible":true,
                  "width":1230,
                  "x":4432,
-                 "y":2409.33333333333
+                 "y":2409.33
                 }, 
                 {
                  "height":192.667,
@@ -1663,9 +1663,9 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":9.66666666666697,
+                 "width":9.66667,
                  "x":5204,
-                 "y":2018.66333333333
+                 "y":2018.66
                 }, 
                 {
                  "height":1236,
@@ -1674,8 +1674,8 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":10.9166666666661,
-                 "x":5715.83333333333,
+                 "width":10.9167,
+                 "x":5715.83,
                  "y":2022
                 }, 
                 {
@@ -1685,12 +1685,12 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":8.75757575757598,
+                 "width":8.75758,
                  "x":6225,
                  "y":1949.5
                 }, 
                 {
-                 "height":66,
+                 "height":43,
                  "id":117,
                  "name":"",
                  "rotation":0,
@@ -1723,13 +1723,13 @@
                  "y":1821.5
                 }, 
                 {
-                 "height":704.393939393939,
+                 "height":704.394,
                  "id":120,
                  "name":"stick",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":9.16666666666697,
+                 "width":9.16667,
                  "x":6732,
                  "y":1249
                 }, 
@@ -1741,29 +1741,29 @@
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":6666,
+                 "x":6512,
                  "y":2314.67
                 }, 
                 {
-                 "height":353.333666666666,
+                 "height":353.334,
                  "id":123,
                  "name":"stick",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":10.6670000000004,
+                 "width":10.667,
                  "x":6222,
-                 "y":2573.33333333333
+                 "y":2573.33
                 }, 
                 {
-                 "height":638.666666666667,
+                 "height":638.667,
                  "id":124,
                  "name":"stick",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":12.333333333333,
-                 "x":7120.66666666667,
+                 "width":12.3333,
+                 "x":7120.67,
                  "y":2288
                 }, 
                 {
@@ -1778,15 +1778,15 @@
                  "y":3172.09
                 }, 
                 {
-                 "height":259.5,
+                 "height":262,
                  "id":128,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":642,
-                 "x":7828,
-                 "y":3044.5
+                 "width":646,
+                 "x":7824,
+                 "y":3042
                 }, 
                 {
                  "height":284,
@@ -1866,15 +1866,15 @@
                  "y":2354
                 }, 
                 {
-                 "height":69,
+                 "height":65,
                  "id":137,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":258,
-                 "x":7192.5,
-                 "y":2526
+                 "x":7184,
+                 "y":2530
                 }, 
                 {
                  "height":61,
@@ -1883,9 +1883,9 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":210.5,
-                 "x":7561,
-                 "y":2722.75
+                 "width":201,
+                 "x":7566,
+                 "y":2722
                 }, 
                 {
                  "height":1014,
@@ -2148,33 +2148,33 @@
                  "type":"",
                  "visible":true,
                  "width":110,
-                 "x":5540,
-                 "y":2202
+                 "x":5541,
+                 "y":2204
                 }, 
                 {
-                 "height":708.060666666667,
+                 "height":708.061,
                  "id":206,
                  "name":"stick",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":9.16667,
-                 "x":7126.08333166667,
-                 "y":1252.13633333333
+                 "x":7126.08,
+                 "y":1252.14
                 }, 
                 {
-                 "height":136.666666666667,
+                 "height":136.667,
                  "id":207,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":403,
-                 "x":6732.16666666667,
-                 "y":1247.33333333333
+                 "x":6732.17,
+                 "y":1247.33
                 }, 
                 {
-                 "height":77.3333333333333,
+                 "height":422.666633333333,
                  "id":208,
                  "name":"",
                  "rotation":0,
@@ -2185,25 +2185,25 @@
                  "y":1948
                 }, 
                 {
-                 "height":330.666666666667,
+                 "height":330.667,
                  "id":209,
                  "name":"stick",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":13.3333333333339,
-                 "x":7122.66666666667,
-                 "y":1957.33333333333
+                 "width":13.3333,
+                 "x":7122.67,
+                 "y":1957.33
                 }, 
                 {
-                 "height":365.333333333333,
+                 "height":365.333,
                  "id":211,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":898.666666666667,
-                 "x":6226.66666666667,
+                 "width":898.667,
+                 "x":6226.67,
                  "y":2564
                 }, 
                 {
@@ -2213,42 +2213,31 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":519,
-                 "x":5208.33333333333,
-                 "y":2017.33333333333
+                 "width":518,
+                 "x":5209.33,
+                 "y":2017.33
                 }, 
                 {
-                 "height":93,
+                 "height":20,
                  "id":213,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":540,
-                 "x":6227,
-                 "y":2289
+                 "width":56,
+                 "x":7268,
+                 "y":2729.33333333333
                 }, 
                 {
-                 "height":86.5,
+                 "height":87.3333333333335,
                  "id":214,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":216,
-                 "x":7348.5,
-                 "y":2901
-                }, 
-                {
-                 "height":24,
-                 "id":215,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":60.5,
-                 "x":7266,
-                 "y":2729
+                 "width":214,
+                 "x":7346.66666666667,
+                 "y":2900.66666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -2257,10 +2246,10 @@
          "y":0
         }],
  "nextlayerid":18,
- "nextobjectid":216,
+ "nextobjectid":215,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.8.2",
+ "tiledversion":"1.7.2",
  "tileheight":64,
  "tilesets":[
         {
@@ -2353,6 +2342,6 @@
         }],
  "tilewidth":64,
  "type":"map",
- "version":"1.8",
+ "version":"1.6",
  "width":159
 }
