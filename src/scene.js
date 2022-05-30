@@ -11,6 +11,13 @@ class scene extends Phaser.Scene {
         this.load.image('tourelle', 'assets/images/tourelle.png');
         this.load.image('pvup', 'assets/images/pvu.png');
         this.load.image('pvdown', 'assets/images/pvd.png');
+        this.load.image('tuto1', 'assets/images/tuto1.png');
+        this.load.image('tuto2', 'assets/images/tuto2.png');
+        this.load.image('tuto3', 'assets/images/tuto3.png');
+        for(let i=1;i<=149;i++){
+            this.load.image('lumiere'+i, 'assets/images/beam/levelgraph (2)'+i+'.png');
+        }
+
 
 
         // At last image must be loaded with its JSON
@@ -86,12 +93,29 @@ class scene extends Phaser.Scene {
         this.player = new Player(this)
 
 
+        this.tuto1 = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        map.getObjectLayer('Tuto1').objects.forEach((tuto1) => {
+            this.tuto1Sprite = this.tuto1.create(tuto1.x , tuto1.y - tuto1.height, 'tuto1').setOrigin(0);
+        });
 
+        this.tuto2 = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        map.getObjectLayer('Tuto2').objects.forEach((tuto2) => {
+            this.tuto2Sprite = this.tuto2.create(tuto2.x , tuto2.y - tuto2.height, 'tuto2').setOrigin(0);
+        });
 
-
-
-
-
+        this.tuto3 = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        map.getObjectLayer('Tuto3').objects.forEach((tuto3) => {
+            this.tuto3Sprite = this.tuto3.create(tuto3.x , tuto3.y - tuto3.height, 'tuto3').setOrigin(0);
+        });
 
 
 
@@ -121,6 +145,40 @@ class scene extends Phaser.Scene {
 
         this.player.move();
         this.player.update()
+
+        this.isolap = this.physics.overlap(this.player.player, this.tuto1) ? true : false;
+
+        switch (true){
+            case this.isolap === true:
+                this.tuto1Sprite.visible = true;
+                break;
+            case this.isolap === false:
+                this.tuto1Sprite.visible = false;
+                break;
+        }
+
+        this.isolap1 = this.physics.overlap(this.player.player, this.tuto2) ? true : false;
+
+        switch (true){
+            case this.isolap1 === true:
+                this.tuto2Sprite.visible = true;
+                break;
+            case this.isolap1 === false:
+                this.tuto2Sprite.visible = false;
+                break;
+        }
+
+        this.isolap2 = this.physics.overlap(this.player.player, this.tuto3) ? true : false;
+
+        switch (true){
+            case this.isolap2 === true:
+                this.tuto3Sprite.visible = true;
+                break;
+            case this.isolap2 === false:
+                this.tuto3Sprite.visible = false;
+                break;
+        }
+
         this.groupEnnemie.forEach(tourelleSprite => tourelleSprite.update())
 
 

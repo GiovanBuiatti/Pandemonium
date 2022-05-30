@@ -20,7 +20,7 @@ class Ennemi {
     }
 
     update(){
-        if(Phaser.Math.Distance.Between(this.scene.player.player.x,this.scene.player.player.y,this.sprite.x,this.sprite.y)<500){
+        if(Phaser.Math.Distance.Between(this.scene.player.player.x,this.scene.player.player.y,this.sprite.x,this.sprite.y)<400){
             this.fire()
 
         }

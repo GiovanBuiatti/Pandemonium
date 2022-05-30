@@ -603,6 +603,75 @@
         }, 
         {
          "draworder":"topdown",
+         "id":19,
+         "name":"Tuto1",
+         "objects":[
+                {
+                 "gid":35384,
+                 "height":171.980853309211,
+                 "id":224,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":127.342274277169,
+                 "x":2518.9696969697,
+                 "y":3207.18181818182
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":20,
+         "name":"Tuto2",
+         "objects":[
+                {
+                 "gid":35385,
+                 "height":245.194029850746,
+                 "id":225,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":222,
+                 "x":3263.66666666667,
+                 "y":2375.86069651741
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":21,
+         "name":"Tuto3",
+         "objects":[
+                {
+                 "gid":35386,
+                 "height":207.655058043117,
+                 "id":226,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":149.333333333333,
+                 "x":4672.33333333333,
+                 "y":2381.98839137645
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":13,
          "name":"ennemi",
          "objects":[
@@ -636,8 +705,8 @@
                  "type":"",
                  "visible":true,
                  "width":63,
-                 "x":5028.5,
-                 "y":2327.5
+                 "x":5384.5,
+                 "y":2298.17
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1657,15 +1726,15 @@
                  "y":2409.33
                 }, 
                 {
-                 "height":192.667,
+                 "height":399.334,
                  "id":113,
                  "name":"stick",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":9.66667,
-                 "x":5204,
-                 "y":2018.66
+                 "x":5543.42,
+                 "y":2017.16
                 }, 
                 {
                  "height":1236,
@@ -1741,8 +1810,8 @@
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":6512,
-                 "y":2314.67
+                 "x":6678.67,
+                 "y":2320.73
                 }, 
                 {
                  "height":353.334,
@@ -2141,17 +2210,6 @@
                  "y":3104
                 }, 
                 {
-                 "height":253,
-                 "id":205,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":110,
-                 "x":5541,
-                 "y":2204
-                }, 
-                {
                  "height":708.061,
                  "id":206,
                  "name":"stick",
@@ -2174,7 +2232,7 @@
                  "y":1247.33
                 }, 
                 {
-                 "height":422.666633333333,
+                 "height":422.667,
                  "id":208,
                  "name":"",
                  "rotation":0,
@@ -2207,15 +2265,15 @@
                  "y":2564
                 }, 
                 {
-                 "height":196,
+                 "height":549.583,
                  "id":212,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":518,
-                 "x":5209.33,
-                 "y":2017.33
+                 "width":180.75,
+                 "x":5546.58,
+                 "y":2017.08
                 }, 
                 {
                  "height":20,
@@ -2226,18 +2284,18 @@
                  "visible":true,
                  "width":56,
                  "x":7268,
-                 "y":2729.33333333333
+                 "y":2729.33
                 }, 
                 {
-                 "height":87.3333333333335,
+                 "height":87.3333,
                  "id":214,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":214,
-                 "x":7346.66666666667,
-                 "y":2900.66666666667
+                 "x":7346.67,
+                 "y":2900.67
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -2245,8 +2303,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":18,
- "nextobjectid":215,
+ "nextlayerid":22,
+ "nextobjectid":227,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.2",
@@ -2329,16 +2387,34 @@
          "margin":0,
          "name":"objet",
          "spacing":0,
-         "tilecount":1,
-         "tileheight":363,
+         "tilecount":4,
+         "tileheight":559,
          "tiles":[
                 {
                  "id":0,
                  "image":"..\/images\/tourelle.png",
                  "imageheight":363,
                  "imagewidth":391
+                }, 
+                {
+                 "id":5,
+                 "image":"..\/images\/tuto1.png",
+                 "imageheight":559,
+                 "imagewidth":402
+                }, 
+                {
+                 "id":6,
+                 "image":"..\/images\/tuto2.png",
+                 "imageheight":444,
+                 "imagewidth":402
+                }, 
+                {
+                 "id":7,
+                 "image":"..\/images\/tuto3.png",
+                 "imageheight":559,
+                 "imagewidth":402
                 }],
-         "tilewidth":391
+         "tilewidth":402
         }],
  "tilewidth":64,
  "type":"map",

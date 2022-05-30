@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="159" height="63" tilewidth="64" tileheight="64" infinite="1" nextlayerid="18" nextobjectid="215">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="159" height="63" tilewidth="64" tileheight="64" infinite="1" nextlayerid="22" nextobjectid="227">
  <tileset firstgid="1" name="Alpha_test1" tilewidth="64" tileheight="64" tilecount="98" columns="14">
   <image source="../FairyTales/assets/Backups/platformPack_tilesheet.png" width="896" height="448"/>
  </tileset>
@@ -15,10 +15,19 @@
  <tileset firstgid="26559" name="playerplan" tilewidth="64" tileheight="64" tilecount="8820" columns="147">
   <image source="assets/tilesets/playerplan.png" width="9408" height="3840"/>
  </tileset>
- <tileset firstgid="35379" name="objet" tilewidth="391" tileheight="363" tilecount="1" columns="0">
+ <tileset firstgid="35379" name="objet" tilewidth="402" tileheight="559" tilecount="4" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image width="391" height="363" source="assets/images/tourelle.png"/>
+  </tile>
+  <tile id="5">
+   <image width="402" height="559" source="assets/images/tuto1.png"/>
+  </tile>
+  <tile id="6">
+   <image width="402" height="444" source="assets/images/tuto2.png"/>
+  </tile>
+  <tile id="7">
+   <image width="402" height="559" source="assets/images/tuto3.png"/>
   </tile>
  </tileset>
  <layer id="11" name="troisiemeplan" width="160" height="80">
@@ -272,10 +281,19 @@
   </chunk>
   </data>
  </layer>
+ <objectgroup id="19" name="Tuto1">
+  <object id="224" gid="35384" x="2518.97" y="3207.18" width="127.342" height="171.981"/>
+ </objectgroup>
+ <objectgroup id="20" name="Tuto2">
+  <object id="225" gid="35385" x="3263.67" y="2375.86" width="222" height="245.194"/>
+ </objectgroup>
+ <objectgroup id="21" name="Tuto3">
+  <object id="226" gid="35386" x="4672.33" y="2381.99" width="149.333" height="207.655"/>
+ </objectgroup>
  <objectgroup id="13" name="ennemi">
   <object id="186" name="ennemie" x="9982.08" y="1086.77" width="63" height="65"/>
   <object id="189" name="ennemie" x="6020.02" y="1591.74" width="63" height="65"/>
-  <object id="203" name="ennemie" x="5028.5" y="2327.5" width="63" height="65"/>
+  <object id="203" name="ennemie" x="5384.5" y="2298.17" width="63" height="65"/>
  </objectgroup>
  <layer id="1" name="Sol" width="160" height="64" visible="0" offsetx="275.515" offsety="35.6364">
   <data encoding="base64">
@@ -644,7 +662,7 @@
   <object id="110" x="3476" y="3298" width="1021.33" height="115.333"/>
   <object id="111" name="stick" x="4432" y="2409.33" width="9.33333" height="1064.67"/>
   <object id="112" x="4432" y="2409.33" width="1230" height="192.667"/>
-  <object id="113" name="stick" x="5204" y="2018.66" width="9.66667" height="192.667"/>
+  <object id="113" name="stick" x="5543.42" y="2017.16" width="9.66667" height="399.334"/>
   <object id="114" name="stick" x="5715.83" y="2022" width="10.9167" height="1236"/>
   <object id="115" name="stick" x="6225" y="1949.5" width="8.75758" height="388.5"/>
   <object id="117" x="6229.5" y="1639.5" width="202" height="43"/>
@@ -688,13 +706,12 @@
   <object id="167" x="7094" y="1574" width="124" height="72.5"/>
   <object id="172" x="1528" y="3062" width="155.818" height="43.5455"/>
   <object id="204" x="3529" y="3104" width="197" height="22"/>
-  <object id="205" x="5541" y="2204" width="110" height="253"/>
   <object id="206" name="stick" x="7126.08" y="1252.14" width="9.16667" height="708.061"/>
   <object id="207" x="6732.17" y="1247.33" width="403" height="136.667"/>
   <object id="208" x="6228" y="1948" width="552" height="422.667"/>
   <object id="209" name="stick" x="7122.67" y="1957.33" width="13.3333" height="330.667"/>
   <object id="211" x="6226.67" y="2564" width="898.667" height="365.333"/>
-  <object id="212" x="5209.33" y="2017.33" width="518" height="196"/>
+  <object id="212" x="5546.58" y="2017.08" width="180.75" height="549.583"/>
   <object id="213" x="7268" y="2729.33" width="56" height="20"/>
   <object id="214" x="7346.67" y="2900.67" width="214" height="87.3333"/>
  </objectgroup>
