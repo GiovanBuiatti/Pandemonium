@@ -14,9 +14,6 @@ class scene extends Phaser.Scene {
         this.load.image('tuto1', 'assets/images/tuto1.png');
         this.load.image('tuto2', 'assets/images/tuto2.png');
         this.load.image('tuto3', 'assets/images/tuto3.png');
-        for(let i=1;i<=149;i++){
-            this.load.image('lumiere'+i, 'assets/images/beam/levelgraph (2)'+i+'.png');
-        }
 
 
 
@@ -31,6 +28,8 @@ class scene extends Phaser.Scene {
         this.load.atlas('wallslide', 'assets/animation/wallslide.png', 'assets/animation/wallslide.json');
         this.load.atlas('falling', 'assets/animation/falling.png', 'assets/animation/falling.json');
         this.load.atlas('idleEnnemi', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
+        this.load.atlas('idleEnnemi', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
+        this.load.atlas('lights', 'assets/images/animlight/light.png', 'assets/images/animlight/light.json');
         this.load.spritesheet('boule', 'assets/fx/boule.png',{ frameWidth: 1024, frameHeight: 1024 });
         this.load.spritesheet('beam', 'assets/fx/beam.png',{ frameWidth: 1024, frameHeight: 1024 });
 
@@ -64,10 +63,20 @@ class scene extends Phaser.Scene {
         this.platforms = map.createLayer('planjoueur', tileset);
         this.firstP = map.createLayer('premierplan', tileset1);
 
+        const lumiere = this.add.sprite(650,400,'lights').setOrigin(0, 0).setBlendMode('ADD')
 
+        this.anims.create({
+            key: 'lights',
+            frameRate: 24,
+            frames: this.anims.generateFrameNames('lights', {start: 1, end: 119, prefix: 'Composition 1/Fog_',suffix:'.jpg',zeroPad:5}),
+            repeat: -1
 
+        })
 
-
+        lumiere.play('lights', true)
+        lumiere.setScrollFactor(0,0);
+        lumiere.setScale(1.2)
+        lumiere.setAlpha(0.65)
 
 
         this.collide = this.physics.add.group({
@@ -133,6 +142,7 @@ class scene extends Phaser.Scene {
 
 
         console.log('prout')
+
 
 
 
