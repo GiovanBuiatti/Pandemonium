@@ -30,6 +30,7 @@ class scene extends Phaser.Scene {
         this.load.atlas('idleEnnemi', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
         this.load.atlas('idleEnnemi', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
         this.load.atlas('lights', 'assets/images/animlight/light.png', 'assets/images/animlight/light.json');
+        this.load.atlas('deathE', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
         this.load.spritesheet('boule', 'assets/fx/boule.png',{ frameWidth: 1024, frameHeight: 1024 });
         this.load.spritesheet('beam', 'assets/fx/beam.png',{ frameWidth: 1024, frameHeight: 1024 });
 
