@@ -2,8 +2,8 @@ class scene extends Phaser.Scene {
 
     preload() {
         this.load.image('background', 'assets/images/background.png');
-        this.load.image('spike', 'assets/images/spike.png');
-        this.load.image('tiles', 'assets/tilesets/platformPack_tilesheet.png');
+
+
         this.load.image('fp', 'assets/tilesets/firstplan.png');
         this.load.image('tp', 'assets/tilesets/thirdplan.png');
         this.load.image('sp', 'assets/tilesets/secondplan.png');
@@ -39,7 +39,7 @@ class scene extends Phaser.Scene {
 
 
     create() {
-
+        this.scene.launch('Ui')
         this.input.mouse.disableContextMenu();
 
 

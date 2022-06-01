@@ -2,6 +2,7 @@ class Player {
 
 
     constructor(scene) {
+        this.emitter=EventDispatcher.getInstance()
         this.scene = scene;
         this.cameras = scene;
         this.player = this.scene.physics.add.sprite(1500, 3350, 'attack').setOrigin(0, 0);
@@ -28,9 +29,18 @@ class Player {
         this.player.canJump=true
         this.compteur=0
         this.jumpWallon=false
+        this.player.life=5
+        this.emitter.on("toucher",this.checklife,this)
 
 
-
+    }
+    checklife(){
+        if (this.player.life===0){
+            this.player.x=1500
+            this.player.y=3350
+            this.player.life=5
+            this.emitter.emit("respawn")
+        }
     }
 
     animation(){
@@ -101,7 +111,13 @@ class Player {
         this.attac = this.scene.physics.add.existing(this.attac)
         this.attac.body.setAllowGravity(false);
         this.attac.body.setVelocityY(-700);
-
+        for(let i=0;i<this.scene.groupEnnemie.length-1;i++){
+        this.scene.physics.add.overlap(this.attac,this.scene.groupEnnemie[i].sprite,(attaque,ennemie)=>{
+            ennemie.fire=false
+            ennemie.destroy()
+        },null,this)
+    }
+       
         this.scene.time.delayedCall(1000, () => {
             this.attac.destroy()
             this.isattaque=false
@@ -115,9 +131,11 @@ class Player {
         this.attacD.body.setAllowGravity(false);
         this.attacD.body.setVelocityY(500);
         for(let i=1;i<=this.scene.groupEnnemie.length-1;i++) {
-            this.scene.physics.add.collider(this.attacD, this.scene.groupEnnemie[i].sprite, (attack, ennemy) => {
+            this.scene.physics.add.collider(this.attacD, this.scene.groupEnnemie[i].sprite, (attack, ennemie) => {
                 this.canJump = true
                 attack.destroy()
+                ennemie.fire=false
+                ennemie.destroy()
 
             }, null, this)
         }
