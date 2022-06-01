@@ -1,0 +1,279 @@
+{
+  "frames": {
+    "deathE1/deathE_0000s_0000_Teinte_Saturation-2-copie-11.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "sourceSize": {
+        "w": 391,
+        "h": 363
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "deathE1/deathE_0000s_0001_Teinte_Saturation-2-copie-10.png": {
+      "frame": {
+        "x": 391,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "sourceSize": {
+        "w": 391,
+        "h": 363
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "deathE1/deathE_0000s_0002_Teinte_Saturation-2-copie-9.png": {
+      "frame": {
+        "x": 782,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "sourceSize": {
+        "w": 391,
+        "h": 363
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "deathE1/deathE_0000s_0003_Teinte_Saturation-2-copie-8.png": {
+      "frame": {
+        "x": 1173,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "sourceSize": {
+        "w": 391,
+        "h": 363
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "deathE1/deathE_0000s_0004_Teinte_Saturation-2-copie-7.png": {
+      "frame": {
+        "x": 1564,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "sourceSize": {
+        "w": 391,
+        "h": 363
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "deathE1/deathE_0000s_0005_Teinte_Saturation-2-copie-6.png": {
+      "frame": {
+        "x": 0,
+        "y": 363,
+        "w": 391,
+        "h": 363
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "sourceSize": {
+        "w": 391,
+        "h": 363
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "deathE1/deathE_0000s_0006_Teinte_Saturation-2-copie-5.png": {
+      "frame": {
+        "x": 0,
+        "y": 726,
+        "w": 391,
+        "h": 363
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "sourceSize": {
+        "w": 391,
+        "h": 363
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "deathE1/deathE_0000s_0007_Teinte_Saturation-2-copie-4.png": {
+      "frame": {
+        "x": 0,
+        "y": 1089,
+        "w": 391,
+        "h": 363
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "sourceSize": {
+        "w": 391,
+        "h": 363
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "deathE1/deathE_0000s_0008_Teinte_Saturation-2-copie-3.png": {
+      "frame": {
+        "x": 0,
+        "y": 1452,
+        "w": 391,
+        "h": 363
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "sourceSize": {
+        "w": 391,
+        "h": 363
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "deathE1/deathE_0000s_0009_Teinte_Saturation-2-copie-2.png": {
+      "frame": {
+        "x": 391,
+        "y": 363,
+        "w": 391,
+        "h": 363
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "sourceSize": {
+        "w": 391,
+        "h": 363
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "deathE1/deathE_0000s_0010_Teinte_Saturation-2-copie.png": {
+      "frame": {
+        "x": 782,
+        "y": 363,
+        "w": 391,
+        "h": 363
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 391,
+        "h": 363
+      },
+      "sourceSize": {
+        "w": 391,
+        "h": 363
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "deathE.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1955,
+      "h": 1815
+    },
+    "scale": 1
+  }
+}

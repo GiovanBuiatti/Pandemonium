@@ -35,6 +35,7 @@ class scene extends Phaser.Scene {
 
         // Load the export Tiled JSON
         this.load.tilemapTiledJSON('map', 'assets/tilemaps/Alpha1.json');
+        this.load.audio('music',['assets/musique.mp3']);
     }
 
 
@@ -42,6 +43,9 @@ class scene extends Phaser.Scene {
         this.scene.launch('Ui')
         this.input.mouse.disableContextMenu();
 
+        this.bt=this.sound.add('music',{ loop: true });
+        this.bt.play()
+        this.bt.volume=0.4
 
         const backgroundImage = this.add.image(0, 600, 'background').setOrigin(0, 0);
 

@@ -55,7 +55,7 @@ class Player {
         this.scene.anims.create({
             key: 'jump',
             frameRate: 12,
-            frames: this.scene.anims.generateFrameNames('jump', {start: 1, end: 7, prefix: 'jump/jump_',suffix:'.png',zeroPad:1}),
+            frames: this.scene.anims.generateFrameNames('jump', {start: 1, end: 5, prefix: 'jump/jump_',suffix:'.png',zeroPad:1}),
         })
         this.scene.anims.create({
             key: 'dash',
