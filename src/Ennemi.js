@@ -70,6 +70,14 @@ class Ennemi {
             repeat : -1
 
         })
+        this.scene.anims.create({
+            key: 'deathE',
+            frameRate: 8,
+            frames: this.scene.anims.generateFrameNames('deathE', {start: 1, end: 11, prefix: 'deathE1/deathE_0000s_0000_Teinte_Saturation-2-copie-11',suffix:'.png',zeroPad:1}),
+
+
+        })
+
     }
 }
 
