@@ -15,7 +15,7 @@ class Ennemilaser {
         this.dt=0
         this.sprite.setVelocityX(200)
         let flip = false
-        const time=this.scene.time.addEvent(
+        this.sprite.time=this.scene.time.addEvent(
             {
                 delay: 1000,
                 callback: () =>

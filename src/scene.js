@@ -113,7 +113,9 @@ constructor() {
                 this.groupEnnemie.push(this.tourelleSprite)
             }
             if(obj.name==='ennemielaser'){
+
                 this.tourelleSprite = new Ennemilaser(this, obj.x, obj.y)
+                this.tourelleSprite.sprite.name=obj.name
                 this.groupEnnemie.push(this.tourelleSprite)
             }
         })

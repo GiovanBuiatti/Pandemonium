@@ -131,7 +131,14 @@ class Player {
         for(let i=0;i<this.scene.groupEnnemie.length-1;i++){
         this.scene.physics.add.overlap(this.attac,this.scene.groupEnnemie[i].sprite,(attaque,ennemie)=>{
             ennemie.fire=false
+            console.log(ennemie)
+
+            if(ennemie.name==='ennemielaser'){
+
+                ennemie.time.destroy()
+            }
             ennemie.destroy()
+
         },null,this)
     }
        
@@ -152,6 +159,12 @@ class Player {
                 this.canJump = true
                 attack.destroy()
                 ennemie.fire=false
+                console.log(ennemie)
+
+                if(ennemie.name==='ennemielaser'){
+
+                    ennemie.time.destroy()
+                }
                 ennemie.destroy()
 
             }, null, this)
