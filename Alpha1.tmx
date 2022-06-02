@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="159" height="63" tilewidth="64" tileheight="64" infinite="1" nextlayerid="22" nextobjectid="227">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="159" height="63" tilewidth="64" tileheight="64" infinite="1" nextlayerid="27" nextobjectid="276">
  <tileset firstgid="1" name="Alpha_test1" tilewidth="64" tileheight="64" tilecount="98" columns="14">
   <image source="../FairyTales/assets/Backups/platformPack_tilesheet.png" width="896" height="448"/>
  </tileset>
@@ -281,14 +281,50 @@
   </chunk>
   </data>
  </layer>
- <objectgroup id="19" name="Tuto1">
-  <object id="224" gid="35384" x="2518.97" y="3207.18" width="127.342" height="171.981"/>
+ <objectgroup id="19" name="Tuto1" visible="0">
+  <object id="224" gid="35384" x="3023.97" y="3119.18" width="127.342" height="171.981"/>
  </objectgroup>
- <objectgroup id="20" name="Tuto2">
-  <object id="225" gid="35385" x="3263.67" y="2375.86" width="222" height="245.194"/>
+ <objectgroup color="#ff0000" id="23" name="Collectible">
+  <object id="234" x="4002.12" y="2257.64" width="24.8182" height="30.3333"/>
+  <object id="235" x="2609.09" y="3154.55" width="27.2727" height="24.2424"/>
+  <object id="237" x="3885.59" y="2256.83" width="24.8182" height="30.3333"/>
+  <object id="238" x="3942.59" y="2256.83" width="24.8182" height="30.3333"/>
+  <object id="239" x="4054.59" y="2258.83" width="24.8182" height="30.3333"/>
+  <object id="240" x="4101.59" y="2256.83" width="24.8182" height="30.3333"/>
+  <object id="241" x="4151.59" y="2257.83" width="24.8182" height="30.3333"/>
+  <object id="242" x="4209.59" y="2256.83" width="24.8182" height="30.3333"/>
+  <object id="243" x="4265.59" y="2255.83" width="24.8182" height="30.3333"/>
+  <object id="244" x="5758.59" y="1921.83" width="24.8182" height="30.3333"/>
+  <object id="245" x="5809.59" y="1892.83" width="24.8182" height="30.3333"/>
+  <object id="246" x="5877.59" y="1867.83" width="24.8182" height="30.3333"/>
+  <object id="247" x="5931.59" y="1851.83" width="24.8182" height="30.3333"/>
+  <object id="248" x="5997.59" y="1843.83" width="24.8182" height="30.3333"/>
+  <object id="249" x="6058.59" y="1846.83" width="24.8182" height="30.3333"/>
+  <object id="250" x="6130.59" y="1860.83" width="24.8182" height="30.3333"/>
+  <object id="251" x="6183.59" y="1888.83" width="24.8182" height="30.3333"/>
+  <object id="253" x="7590.62" y="1315.14" width="24.8182" height="30.3333"/>
+  <object id="254" x="7653.59" y="1329.83" width="24.8182" height="30.3333"/>
+  <object id="255" x="7732.59" y="1363.83" width="24.8182" height="30.3333"/>
+  <object id="256" x="7801.59" y="1395.83" width="24.8182" height="30.3333"/>
+  <object id="257" x="7876.59" y="1436.83" width="24.8182" height="30.3333"/>
+  <object id="258" x="7930.59" y="1468.83" width="24.8182" height="30.3333"/>
+  <object id="259" x="7987.59" y="1502.83" width="24.8182" height="30.3333"/>
+  <object id="261" x="7420.92" y="1842.17" width="24.8182" height="30.3333"/>
+  <object id="262" x="7843.59" y="1968.83" width="24.8182" height="30.3333"/>
+  <object id="263" x="8099.59" y="2170.17" width="24.8182" height="30.3333"/>
+  <object id="264" x="7712.92" y="2311.5" width="24.8182" height="30.3333"/>
+  <object id="265" x="7306.26" y="2479.5" width="24.8182" height="30.3333"/>
+  <object id="266" x="7647.59" y="2678.17" width="24.8182" height="30.3333"/>
+  <object id="268" x="7434.26" y="2859.5" width="24.8182" height="30.3333"/>
+  <object id="269" x="4163.35" y="2945.44" width="24.8182" height="30.3333"/>
+  <object id="270" x="4030.02" y="2760.59" width="24.8182" height="30.3333"/>
+  <object id="271" x="3817.23" y="2574.11" width="24.8182" height="30.3333"/>
  </objectgroup>
- <objectgroup id="21" name="Tuto3">
-  <object id="226" gid="35386" x="4672.33" y="2381.99" width="149.333" height="207.655"/>
+ <objectgroup color="#00ff00" id="22" name="Save">
+  <object id="229" x="1396.06" y="3493.03" width="93.3333" height="69.2727"/>
+  <object id="230" x="3016.06" y="2152.06" width="300.667" height="254.303"/>
+  <object id="236" x="4445" y="2190.35" width="244.917" height="224.136"/>
+  <object id="272" x="6544.33" y="1333.85" width="188.333" height="143.303"/>
  </objectgroup>
  <objectgroup id="13" name="ennemi">
   <object id="186" name="ennemie" x="9982.08" y="1086.77" width="63" height="65"/>
@@ -391,6 +427,9 @@
    BAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
   </chunk>
   </data>
+ </layer>
+ <layer id="25" name="tuto" width="0" height="0">
+  <data encoding="base64"/>
  </layer>
  <layer id="17" name="planjoueur" width="160" height="64">
   <data encoding="base64">
@@ -516,6 +555,11 @@
   </chunk>
   </data>
  </layer>
+ <objectgroup id="26" name="tuto">
+  <object id="273" gid="35384" x="3025" y="3228" width="261" height="357.607"/>
+  <object id="274" gid="35385" x="3293" y="2652" width="222" height="245.194"/>
+  <object id="275" gid="35386" x="4947" y="2190" width="235.159" height="327"/>
+ </objectgroup>
  <layer id="10" name="premierplan" width="160" height="96">
   <data encoding="base64">
    <chunk x="0" y="-32" width="16" height="16">
