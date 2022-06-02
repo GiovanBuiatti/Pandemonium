@@ -174,7 +174,7 @@ class Player {
               this.tween = this.scene.tweens.add({
                   targets: this,
                   d: '+=10',
-                  ease: 'Circ.easeInOut',
+                  ease: 'Power1',
                   duration: 150,
                   onComplete: function () {
                       me.d = 1
@@ -195,7 +195,7 @@ class Player {
                 this.tween = this.scene.tweens.add({
                     targets: this,
                     d: '+=10',
-                    ease: 'Circ.easeInOut',
+                    ease: 'Power1',
                     duration: 150,
                     onComplete: function () {
                         me.d = 1

@@ -6,7 +6,7 @@ class Ennemilaser {
         this.emitter=EventDispatcher.getInstance()
         this.Animations()
         this.sprite=this.scene.physics.add.sprite(x, y,'ennemiLaser','attackA1/attackA1.png')
-        this.sprite.play('attack', true)
+        this.sprite.play('ennemieAttack', true)
         this.sprite.body.setSize(90, 150)
         this.scene.physics.add.collider(this.sprite,this.scene.collide)
 
@@ -76,7 +76,7 @@ class Ennemilaser {
     }
     Animations(){
         this.scene.anims.create({
-            key: 'attack',
+            key: 'ennemieAttack',
             frameRate: 8,
             frames: this.scene.anims.generateFrameNames('ennemiLaser', {start: 1, end: 5, prefix: 'attackA1/attackA',suffix:'.png',zeroPad:1}),
             repeat : -1
