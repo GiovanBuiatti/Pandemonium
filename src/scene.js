@@ -33,7 +33,7 @@ constructor() {
         this.load.atlas('wallslide', 'assets/animation/wallslide.png', 'assets/animation/wallslide.json');
         this.load.atlas('falling', 'assets/animation/falling.png', 'assets/animation/falling.json');
         this.load.atlas('idleEnnemi', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
-        this.load.atlas('idleEnnemi', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
+        this.load.atlas('ennemiLaser', 'assets/animation/attackA.png', 'assets/animation/attackA.json');
         this.load.atlas('lights', 'assets/images/animlight/light.png', 'assets/images/animlight/light.json');
         this.load.atlas('deathE', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
         this.load.atlas('fxd', 'assets/animation/fx.png', 'assets/animation/fx.json');
@@ -50,8 +50,9 @@ constructor() {
         this.scene.launch('Ui')
         this.input.mouse.disableContextMenu();
 
-        this.currentSaveX = 0;
-        this.currentSaveY = 0;
+        this.currentSaveX = 1500;
+        this.currentSaveY = 3350;
+
 
         this.bt=this.sound.add('music',{ loop: true });
         this.bt.play()
@@ -107,9 +108,16 @@ constructor() {
         });
        this.groupEnnemie=[]
         map.getObjectLayer('ennemi').objects.forEach((obj) => {
-             this.tourelleSprite = new Ennemi(this,obj.x,obj.y)
-            this.groupEnnemie.push(this.tourelleSprite)
-            })
+            if(obj.name==='ennemie') {
+                this.tourelleSprite = new Ennemi(this, obj.x, obj.y)
+                this.groupEnnemie.push(this.tourelleSprite)
+            }
+            if(obj.name==='ennemielaser'){
+                this.tourelleSprite = new Ennemilaser(this, obj.x, obj.y)
+                this.groupEnnemie.push(this.tourelleSprite)
+            }
+        })
+
 
 
 
