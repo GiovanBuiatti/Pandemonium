@@ -17,6 +17,8 @@ constructor() {
         this.load.image('tuto1', 'assets/images/tuto1.png');
         this.load.image('tuto2', 'assets/images/tuto2.png');
         this.load.image('tuto3', 'assets/images/tuto3.png');
+        this.load.image('dk', 'assets/animation/damagetaken.png');
+
 
 
 
@@ -34,6 +36,7 @@ constructor() {
         this.load.atlas('idleEnnemi', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
         this.load.atlas('lights', 'assets/images/animlight/light.png', 'assets/images/animlight/light.json');
         this.load.atlas('deathE', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
+        this.load.atlas('fxd', 'assets/animation/fx.png', 'assets/animation/fx.json');
         this.load.spritesheet('boule', 'assets/fx/boule.png',{ frameWidth: 1024, frameHeight: 1024 });
         this.load.spritesheet('beam', 'assets/fx/beam.png',{ frameWidth: 1024, frameHeight: 1024 });
 

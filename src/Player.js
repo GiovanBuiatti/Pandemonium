@@ -97,6 +97,15 @@ class Player {
             repeat: -1,
 
         })
+        this.scene.anims.create({
+            key: 'fxd',
+            frameRate: 20,
+            hideOnComplete:true,
+            frames: this.scene.anims.generateFrameNames('fxd', {start: 1, end: 3, prefix: 'fx/fx_',suffix:'.png',zeroPad:1}),
+
+
+        })
+
     }
 
     attaque(direction){

@@ -45,7 +45,12 @@ class Ennemi {
                 player.life-=1
                 console.log('yolo')
                 this.emitter.emit("toucher")
+            const fxd = this.scene.add.sprite(player.x, player.y, 'fxd').play('fxd', true).scene.time.delayedCall(1000,() => {
 
+                fxd.destroy()
+
+
+            });
                 boule.destroy()
                 // player.body.enable=false
                 // player.visible=false
