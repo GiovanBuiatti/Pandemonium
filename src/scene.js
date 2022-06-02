@@ -50,6 +50,9 @@ constructor() {
         this.scene.launch('Ui')
         this.input.mouse.disableContextMenu();
 
+        this.currentSaveX = 0;
+        this.currentSaveY = 0;
+
         this.bt=this.sound.add('music',{ loop: true });
         this.bt.play()
         this.bt.volume=0.4
@@ -138,7 +141,26 @@ constructor() {
         });
 
 
+        //save
+        this.saves = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        map.getObjectLayer('Save').objects.forEach((save) => {
+            this.saves.create(save.x, save.y- save.height, 'kzkz').setOrigin(0);
+        });
+        this.physics.add.overlap(this.player.player, this.saves, this.sauvegarde, null, this);
 
+
+        //collectible
+        this.collect = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        map.getObjectLayer('Collectible').objects.forEach((collect) => {
+            this.collect.create(collect.x, collect.y- collect.height, 'cricri').setOrigin(0);
+        });
+        this.physics.add.overlap(this.player.player, this.collect, this.collectible, null, this);
 
 
 
@@ -159,6 +181,18 @@ constructor() {
 
     }
 
+    collectible(player, collect) {
+        collect.destroy();
+        player.collect += 100;
+        console.log(player.collect);
+    }
+
+    sauvegarde(player, saves) {
+        this.currentSaveX = player.x;
+        this.currentSaveY = player.y-10;
+        saves.body.enable = false;
+        console.log(this.currentSaveX)
+    }
 
 
 

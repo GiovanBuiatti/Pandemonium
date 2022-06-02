@@ -12,6 +12,7 @@ class Player {
         this.scene.physics.add.collider(this.player, this.scene.platforms);
         this.onWall = false;
 
+        this.player.collect = 0;
         this.d = 1;
         this.lockDash=0;
         this.spaceDown=false;
@@ -36,9 +37,10 @@ class Player {
     }
     checklife(){
         if (this.player.life===0){
-            this.player.x=1500
-            this.player.y=3350
+            this.player.x=this.scene.currentSaveX + 40;
+            this.player.y=this.scene.currentSaveY;
             this.player.life=5
+
             this.emitter.emit("respawn")
         }
     }
@@ -103,6 +105,12 @@ class Player {
             hideOnComplete:true,
             frames: this.scene.anims.generateFrameNames('fxd', {start: 1, end: 3, prefix: 'fx/fx_',suffix:'.png',zeroPad:1}),
 
+        })
+        this.scene.anims.create({
+            key: 'wallslide',
+            frameRate: 12,
+            frames: this.scene.anims.generateFrameNames('wallslide', {start: 1, end: 3, prefix: 'wallslide/wallslide_',suffix:'.png',zeroPad:1}),
+            repeat: -1,
 
         })
 
