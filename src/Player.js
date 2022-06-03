@@ -11,8 +11,7 @@ class Player {
         this.player.setCollideWorldBounds(false);
         this.scene.physics.add.collider(this.player, this.scene.platforms);
         this.onWall = false;
-
-        this.player.collect = 0;
+        window.objet_fragment = 0;
         this.d = 1;
         this.lockDash=0;
         this.spaceDown=false;
@@ -35,15 +34,7 @@ class Player {
 
 
     }
-    checklife(){
-        if (this.player.life===0){
-            this.player.x=this.scene.currentSaveX + 40;
-            this.player.y=this.scene.currentSaveY;
-            this.player.life=5
 
-            this.emitter.emit("respawn")
-        }
-    }
 
     animation(){
 
@@ -113,7 +104,24 @@ class Player {
             repeat: -1,
 
         })
+        this.scene.anims.create({
+            key: 'death',
+            frameRate: 24,
+            frames: this.scene.anims.generateFrameNames('death', {start: 1, end: 18, prefix: 'Death/death_',suffix:'.png',zeroPad:1}),
 
+        })
+
+
+    }
+
+    checklife(){
+        if (this.player.life===0){
+            this.player.x=this.scene.currentSaveX + 40;
+            this.player.y=this.scene.currentSaveY;
+            this.player.life=5
+            this.emitter.emit("respawn")
+
+        }
     }
 
     attaque(direction){
@@ -446,6 +454,7 @@ class Player {
         this.moveRightRelease();
         this.moveLeftRelease();
         }
+
 
         update(){
             if(this.attac.y>this.player.y+this.player.height){

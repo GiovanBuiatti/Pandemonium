@@ -44,10 +44,10 @@ class Ennemilaser {
 
     fire(){
         this.dt=0
-        this.boule = this.scene.physics.add.sprite(this.sprite.x, this.sprite.y, 'beam').play('beam').setSize(400, 50).setDisplaySize(400, 50)
+        this.boule = this.scene.physics.add.sprite(this.sprite.x, this.sprite.y, 'beam').play('beam').setSize(400, 150).setDisplaySize(400, 400).setBlendMode("ADD")
         this.boule.body.setAllowGravity(false)
         this.scene.physics.moveTo(this.boule, this.scene.player.player.x,this.sprite.y)
-        this.boule.setVelocityX(this.boule.body.velocity.x*5)
+        this.boule.setVelocityX(this.boule.body.velocity.x*4)
         this.boule.setVelocityY(this.boule.body.velocity.y*5)
         const life=this.scene.time.delayedCall(4000,()=>{
             this.boule.destroy()
@@ -84,9 +84,9 @@ class Ennemilaser {
         })
         this.scene.anims.create({
             key: 'beam',
-            frameRate: 160,
+            frameRate: 30,
             frames:this.scene.anims.generateFrameNumbers('beam', {start: 0, end: 63}),
-            repeat : -1
+
 
         })
 

@@ -5,8 +5,24 @@ class Ui extends Phaser.Scene {
     preload(){
         this.load.image('pvu', 'assets/images/pvu.png')
         this.load.image('pvd', 'assets/images/pvd.png')
+        this.load.image('point', 'assets/images/points.png')
+
     }
     create(){
+
+
+        this.add.sprite(100,120,'point')
+            .setDisplaySize(125,64);
+
+        this.count1 = this.add.text(160 ,125 , window.objet_fragment,{
+            color: '#ffffff',
+            fontFamily: 'American Typewriter, serif',
+            fontSize : 25
+        })
+            .setOrigin(0.5)
+            .setAlpha(1);
+
+        //PV
         this.emitter=EventDispatcher.getInstance()
         this.groupeLife=[]
         this.life=5
@@ -15,8 +31,10 @@ class Ui extends Phaser.Scene {
             this.groupeLife.push(life)
         }
         this.emitter.on("toucher",this.handlelife,this)
-
         this.emitter.on("respawn",this.handlerespawn,this)
+
+
+
 
     }
     handlelife(){
@@ -36,6 +54,6 @@ class Ui extends Phaser.Scene {
         }
     }
     update(){
-
+        this.count1.setText(Math.round(window.objet_fragment));
     }
 }

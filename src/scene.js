@@ -18,6 +18,8 @@ constructor() {
         this.load.image('tuto2', 'assets/images/tuto2.png');
         this.load.image('tuto3', 'assets/images/tuto3.png');
         this.load.image('dk', 'assets/animation/damagetaken.png');
+        this.load.image('cricri', 'assets/images/cricri.png');
+        this.load.image('sav', 'assets/images/save.png');
 
 
 
@@ -31,6 +33,7 @@ constructor() {
         this.load.atlas('attackD', 'assets/animation/attackD.png', 'assets/animation/attackD.json');
         this.load.atlas('dash', 'assets/animation/dash.png', 'assets/animation/dash.json');
         this.load.atlas('wallslide', 'assets/animation/wallslide.png', 'assets/animation/wallslide.json');
+        this.load.atlas('death', 'assets/animation/death.png', 'assets/animation/death.json');
         this.load.atlas('falling', 'assets/animation/falling.png', 'assets/animation/falling.json');
         this.load.atlas('idleEnnemi', 'assets/animation/idleE.png', 'assets/animation/idleE.json');
         this.load.atlas('ennemiLaser', 'assets/animation/attackA.png', 'assets/animation/attackA.json');
@@ -160,7 +163,8 @@ constructor() {
             immovable: true
         });
         map.getObjectLayer('Save').objects.forEach((save) => {
-            this.saves.create(save.x, save.y- save.height, 'kzkz').setOrigin(0);
+            this.saves.create(save.x, save.y- save.height, 'sav').setOrigin(0);
+            this.saves.setAlpha(0)
         });
         this.physics.add.overlap(this.player.player, this.saves, this.sauvegarde, null, this);
 
@@ -196,8 +200,8 @@ constructor() {
 
     collectible(player, collect) {
         collect.destroy();
-        player.collect += 100;
-        console.log(player.collect);
+        window.objet_fragment += 10;
+        console.log( window.objet_fragment);
     }
 
     sauvegarde(player, saves) {
