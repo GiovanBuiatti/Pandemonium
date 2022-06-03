@@ -21,6 +21,7 @@ constructor() {
         this.load.image('dk', 'assets/animation/damagetaken.png');
         this.load.image('cricri', 'assets/images/cricri.png');
         this.load.image('sav', 'assets/images/save.png');
+        this.load.image('part', 'assets/images/truc.png');
 
 
 
@@ -178,6 +179,14 @@ constructor() {
         });
         this.physics.add.overlap(this.player.player, this.saves, this.sauvegarde, null, this);
 
+        this.TourCrist = this.add.particles('part');
+        this.TourCrist.createEmitter({
+            lifespan: 300,
+            speed: 150,
+            quantity: 200,
+            scale: { start: 0.3, end: 0 },
+            on: false
+        });
 
         //collectible
         this.collect = this.physics.add.group({
@@ -210,6 +219,7 @@ constructor() {
 
     collectible(player, collect) {
         collect.destroy();
+        this.TourCrist.emitParticleAt(collect.x,collect.y-23);
         window.objet_fragment += 10;
         console.log( window.objet_fragment);
     }
