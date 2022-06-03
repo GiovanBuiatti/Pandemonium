@@ -3025,9 +3025,32 @@
          "visible":true,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":27,
+         "name":"EndGame",
+         "objects":[
+                {
+                 "gid":35385,
+                 "height":444,
+                 "id":305,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":402,
+                 "x":9167,
+                 "y":970
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":27,
- "nextobjectid":305,
+ "nextlayerid":28,
+ "nextobjectid":306,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.2",

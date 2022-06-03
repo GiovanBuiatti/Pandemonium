@@ -16,6 +16,7 @@ constructor() {
         this.load.image('pvdown', 'assets/images/pvd.png');
         this.load.image('tuto1', 'assets/images/tuto1.png');
         this.load.image('tuto2', 'assets/images/tuto2.png');
+        this.load.image('end', 'assets/images/tuto2.png');
         this.load.image('tuto3', 'assets/images/tuto3.png');
         this.load.image('dk', 'assets/animation/damagetaken.png');
         this.load.image('cricri', 'assets/images/cricri.png');
@@ -52,6 +53,8 @@ constructor() {
     create() {
         this.scene.launch('Ui')
         this.input.mouse.disableContextMenu();
+
+        this.started = false;
 
         this.currentSaveX = 1500;
         this.currentSaveY = 3350;
@@ -155,7 +158,14 @@ constructor() {
         this.groupEnnemie.push(new Ennemi(this,0,0))
         this.player = new Player(this)
 
-
+        this.End = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+        map.getObjectLayer('EndGame').objects.forEach((End) => {
+            this.EndSprite = this.End.create(End.x , End.y , 'end').setOrigin(0).setVisible(false);
+        });
+        this.physics.add.overlap(this.player.player, this.EndSprite, this.Credits, null, this);
 
         //save
         this.saves = this.physics.add.group({
@@ -211,7 +221,15 @@ constructor() {
         console.log(this.currentSaveX)
     }
 
+    Credits(){
+        if (this.started){
 
+        } else {
+
+            this.scene.start('credits')
+            this.started = true ;
+        }
+    }
 
     update() {
 
